@@ -1,6 +1,7 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { SignUpLogin } from "./pages/SingnUpLogin";
+import { BrowserRouter, Routes, Route,  } from "react-router-dom";
+import { SignIn } from "./pages/SignIn";
 import LandingPageOne from "./pages/LandingPageOne";
+import { SignUp } from "./pages/SignUp";
 
 function App() {
 
@@ -11,9 +12,11 @@ function App() {
         <Route index element={
         // eslint-disable-next-line react/jsx-no-undef
           <LandingPageOne />
+          // <SignIn/>
         } />
-        <Route path="SignUpORLogin" element={<SignUpLogin />} />
-        <Route path="land" element={<LandingPageOne />} />
+        <Route path="/" element={<LandingPageOne />} />
+        <Route path="/SignIn" element={<SignIn />} />
+        <Route path="/SignUp" element={<SignUp />} />
         
 
       </Route>

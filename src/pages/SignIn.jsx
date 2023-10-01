@@ -1,7 +1,7 @@
 // import React from 'react'
 import { ArrowRight } from 'lucide-react'
 import { useNavigate } from 'react-router-dom';
-export function SignUpLogin() {
+export function SignIn() {
   const navigate = useNavigate();
   
   return (
@@ -24,7 +24,7 @@ export function SignUpLogin() {
               </svg>
             </span>
             <span className="font-bold cursor-pointer" 
-            onClick={()=>navigate(-1)}
+            onClick={()=>navigate("/")}
             > 
             strayAidConnect</span>
           </div>
@@ -47,9 +47,9 @@ export function SignUpLogin() {
           <div className="relative">
             <div className="w-full max-w-xl xl:mx-auto xl:w-full xl:max-w-xl xl:pr-24">
               <h3 className="text-4xl font-bold text-white">
-                Now you dont have to rely on your designer to create a new page
+                {/* Now you dont have to rely on your designer to create a new page */}
               </h3>
-              <ul className="mt-10 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+              {/* <ul className="mt-10 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
                 <li className="flex items-center space-x-3">
                   <div className="inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-500">
                     <svg
@@ -118,14 +118,17 @@ export function SignUpLogin() {
                   </div>
                   <span className="text-lg font-medium text-white"> Design Files Included </span>
                 </li>
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>
         <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
           <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign in</h2>
-            <p className="mt-2 text-sm text-gray-600">
+            <p className="mt-2 text-sm text-gray-600"
+               onClick={() => navigate('/SignUp')}
+
+            >
               Don&apos;t have an account?{' '}
               <a
                 href="#"

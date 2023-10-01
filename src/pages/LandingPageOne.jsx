@@ -1,6 +1,8 @@
 'use client'
 import React from 'react';
-import { ChevronDown, ChevronUp, Link, Menu, X } from 'lucide-react'
+import { ChevronDown,
+  //  ChevronUp, Link, 
+   Menu, X } from 'lucide-react'
 import { useNavigate } from 'react-router-dom';
 
 const menuItems = [
@@ -149,7 +151,7 @@ export function LandingPageOne() {
                 <p className="text-sm font-medium">Let&apos; make a difference</p>
               </div>
               <p className="text-sm font-medium cursor-pointer"
-              onClick={() => navigate('SignUpORLogin')}
+              onClick={() => navigate('/SignUp')}
               >Join the community &rarr;</p>
             </div>
             <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-6xl">
@@ -304,7 +306,7 @@ export function LandingPageOne() {
               >
                 <span className="flex text-lg font-semibold text-black">What is strayAid-Connect?</span>
 
-                <ChevronUp className="h-5 w-5 text-gray-500" />
+                <ChevronDown className="h-5 w-5 text-gray-500" />
               </button>
               <div className="px-4 pb-5 sm:px-6 sm:pb-6">
                 <p className="text-gray-500">
@@ -319,7 +321,7 @@ export function LandingPageOne() {
               >
                 <span className="flex text-lg font-semibold text-black">How do I help stray animals?</span>
 
-                <ChevronUp className="h-5 w-5 text-gray-500" />
+                <ChevronDown className="h-5 w-5 text-gray-500" />
               </button>
               <div className="px-4 pb-5 sm:px-6 sm:pb-6">
                 <p className="text-gray-500">
@@ -334,7 +336,7 @@ export function LandingPageOne() {
               >
                 <span className="flex text-lg font-semibold text-black">How do I get started?</span>
 
-                <ChevronUp className="h-5 w-5 text-gray-500" />
+                <ChevronDown className="h-5 w-5 text-gray-500" />
               </button>
               <div className="px-4 pb-5 sm:px-6 sm:pb-6">
                 <p className="text-gray-500">
