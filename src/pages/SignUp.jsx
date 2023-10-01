@@ -54,11 +54,12 @@ export function SignUp() {
             Sign up to create account
           </h2>
           <p className="mt-2 text-center text-base text-gray-600"
-              onClick={() => navigate('/SignIn')}
+              // onClick={() => navigate('/SignIn')}
 
           >
             Already have an account?{' '}
             <a
+            onClick={() => navigate('/SignIn')}
               href=""
               title=""
               className="font-medium text-black transition-all duration-200 hover:underline"
