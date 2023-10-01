@@ -57,7 +57,7 @@ export function SignUp() {
           // onClick={() => navigate('/SignIn')}
 
           >
-            Already have an Lobe?{' '}
+            Already have an account?{' '}
             <a
               // href=""
               title=""
