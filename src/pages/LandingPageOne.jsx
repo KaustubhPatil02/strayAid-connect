@@ -150,10 +150,16 @@ export function LandingPageOne() {
               <div className="rounded-full bg-white p-1 px-2">
                 <p className="text-sm font-medium">Let&apos; make a difference</p>
               </div>
-              <p className="text-sm font-medium cursor-pointer"
-              onClick={() => navigate('/SignUp')}
+              {/* <p className="text-sm font-medium cursor-pointer"
+              onClick={() => 
+                navigate('/SignUp')}
+              >Join the community &rarr;</p>
+            </div> */}
+            <p className="text-sm font-medium cursor-pointer"
+            
               >Join the community &rarr;</p>
             </div>
+            <a href='https://stray-aid-connect-chatrooms.vercel.app/'></a>
             <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-6xl">
               People who care about the strays
             </h1>
