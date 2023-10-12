@@ -31,7 +31,7 @@ export function LandingPageOne() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <div className="w-full no-scrollbar">
       <header className="sticky top-0 z-50 w-full border-b bg-white pb-4 ">
@@ -156,10 +156,10 @@ export function LandingPageOne() {
               >Join the community &rarr;</p>
             </div> */}
             <p className="text-sm font-medium cursor-pointer"
-            
-              >Join the community &rarr;</p>
-            </div>
+              >Join the community &rarr;
             <a href='https://stray-aid-connect-chatrooms.vercel.app/'></a>
+              </p>
+            </div>
             <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-6xl">
               People who care about the strays
             </h1>
