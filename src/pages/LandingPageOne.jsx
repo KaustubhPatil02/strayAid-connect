@@ -415,7 +415,7 @@ export function LandingPageOne() {
               <div className="px-4 pb-5 sm:px-6 sm:pb-6">
                 <p className="text-gray-500">
                   <p>Click on Join the community</p>
-                  Get signup in the free Account. And contribute to the community.
+                  Get signup with the free Account. And contribute to the community.
                 </p>
               </div>
             </div>
