@@ -156,20 +156,19 @@ export function LandingPageOne() {
                 navigate('/SignUp')}
               >Join the community &rarr;</p>
             </div> */}
-           
-              {/* <a href ="https://stray-aid-connect-chatrooms.vercel.app/"></a> */}
-              {/* <link rel="stylesheet" href="https://stray-aid-connect-chatrooms.vercel.app" /> */}
-              <Link to={{ pathname: "https://stray-aid-connect-chatrooms.vercel.app" }} target="_blank">
+            
+              <a href ="https://stray-aid-connect-chatrooms.vercel.app/">
               <p className="text-sm font-medium cursor-pointer"
               >Join the community &rarr;
-              </p></Link>
+              </p>
+              </a>
             </div>
             <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-6xl">
               People who care about the strays
             </h1>
             <p className="mt-8 text-lg text-gray-700">
               {/* A stray is a domestic animal, fowl, etc, that has wandered away and is lost. The dog was a stray which had been adopted. A stray dog or cat has wandered away from its owner&apos;s home. A stray dog came up to him. */}
-              strayAidConnect is a self sustainable webApp
+              strayAidConnect is a self sustainable web
             </p>
             {/* <form action="" className="mt-8 flex items-start space-x-2">
                   <div>
