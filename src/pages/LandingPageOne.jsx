@@ -8,7 +8,6 @@ import { ChevronDown,
 import './firebase'
 
 
-
 const menuItems = [
   {
     name: 'Home',
@@ -28,8 +27,18 @@ const menuItems = [
   },
 ]
 
+const LoadingSpinner = () => {
+  return (
+    <div className="flex items-center justify-center">
+      <div className="animate-spin h-6 w-6 border-t-2 border-blue-500 border-r-2 border-b-2 border-blue-200 rounded-full"></div>
+    </div>
+  );
+};
+
 export function LandingPageOne() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const [contactData, setContact] = useState({
     firstName: "",
@@ -49,6 +58,12 @@ export function LandingPageOne() {
   
   // Firebase connection
   const submitContact = async (event) => {
+    setIsLoading(true);
+    setTimeout(() => {
+      // Reset isLoading to false after a 2-second delay.
+      setIsLoading(false);
+    }, 2000);
+
     event.preventDefault();
     const { firstName, lastName, email, phoneNum, msg } = contactData;
   
@@ -830,13 +845,27 @@ export function LandingPageOne() {
 
                     />
                   </div>
-                  <button
+                  {/* <button
                     type="button"
-                    className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                    className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black items-center justify-center"
                     onClick={submitContact}
                   >
                     Send Message
-                  </button>
+                  </button> */}
+                   <div>
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <button
+          type="button"
+          className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black items-center justify-center"
+          onClick={submitContact}
+        >
+          Send Message
+        </button>
+      )}
+    </div>
+                  
                 </form>
               </div>
             </div>
