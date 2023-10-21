@@ -1,8 +1,10 @@
 'use client'
 import React, { useState } from 'react';
-import { ChevronDown,
+import {
+  ChevronDown,
   //  ChevronUp, Link, 
-   Menu, X } from 'lucide-react'
+  Menu, X
+} from 'lucide-react'
 // import { useNavigate } from 'react-router-dom';
 // import { Link } from "react-router-dom";
 import './firebase'
@@ -19,7 +21,7 @@ const menuItems = [
   },
   {
     name: 'Contact',
-    href: '#contact-us',
+    href: '#getintouch',
   },
   {
     name: 'FAQs',
@@ -38,6 +40,7 @@ const LoadingSpinner = () => {
 export function LandingPageOne() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   const [isLoading, setIsLoading] = useState(false);
+  const [popupMessage, setPopupMessage] = useState('');
 
 
   const [contactData, setContact] = useState({
@@ -47,29 +50,31 @@ export function LandingPageOne() {
     phoneNum: "",
     msg: "",
   });
-  
+
   let name, value;
-  
+
   const postContactForm = (event) => {
     name = event.target.name;
     value = event.target.value;
     setContact({ ...contactData, [name]: value });
   };
-  
+
   // Firebase connection
   const submitContact = async (event) => {
     setIsLoading(true);
     setTimeout(() => {
       // Reset isLoading to false after a 2-second delay.
       setIsLoading(false);
-    }, 2000);
+    }, 1500);
 
     event.preventDefault();
     const { firstName, lastName, email, phoneNum, msg } = contactData;
-  
+
     if (!firstName || !lastName || !email || !phoneNum || !msg) {
-      alert('Please fill out all fields before submitting.');
-      return; // Prevent further execution of the function
+      setPopupMessage('Please fill out all fields before submitting.');
+      return;
+    } else {
+      setPopupMessage('We got it, Thanks for sharing us!'); // Clear the pop-up message if all fields are filled.
     }
     try {
       const res = await fetch(
@@ -87,9 +92,10 @@ export function LandingPageOne() {
             msg
           }),
         }
-      );
-  
-      if (res.ok) {
+      )
+
+      if (res.ok) 
+      {
         setContact({
           firstName: "",
           lastName: "",
@@ -97,16 +103,17 @@ export function LandingPageOne() {
           phoneNum: "",
           msg: "",
         })
-        alert('Data submitted');
+        setPopupMessage('Data submitted successfully');
       } else {
-        alert('Data not submitted');
+        setPopupMessage('Data not submitted. Please try again.');
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Data not submitted');
+      setPopupMessage('Data not submitted due to an error.');
     }
   };
   
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
@@ -235,11 +242,11 @@ export function LandingPageOne() {
                 navigate('/SignUp')}
               >Join the community &rarr;</p>
             </div> */}
-            
-              <a href ="https://stray-aid-connect-chatrooms.vercel.app/" target='blank'>
-              <p className="text-sm font-medium cursor-pointer"
-              >Join the community &rarr;
-              </p>
+
+              <a href="https://stray-aid-connect-chatrooms.vercel.app/" target='blank'>
+                <p className="text-sm font-medium cursor-pointer"
+                >Join the community &rarr;
+                </p>
               </a>
             </div>
             <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-6xl">
@@ -744,11 +751,11 @@ export function LandingPageOne() {
             {/* contact from */}
             <div className="flex items-center justify-center">
               <div className="px-2 md:px-12">
-                <p className="text-2xl font-bold text-gray-900 md:text-4xl">Get in touch</p>
+                <p className="text-2xl font-bold text-gray-900 md:text-4xl" id='getintouch'>Get in touch</p>
                 <p className="mt-4 text-lg text-gray-600" >
                   Our friendly team would love to hear from you.
                 </p>
-                <form id='form' method =" POST" action="" className="mt-8 space-y-4">
+                <form id='form' method=" POST" action="" className="mt-8 space-y-4">
                   <div className="grid w-full gap-y-4 md:gap-x-4 lg:grid-cols-2">
                     <div className="grid w-full  items-center gap-1.5">
                       <label
@@ -804,7 +811,7 @@ export function LandingPageOne() {
                       value={contactData.email}
                       onChange={postContactForm}
                       style={{ color: 'black' }}
-                      
+
                     />
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
@@ -845,27 +852,24 @@ export function LandingPageOne() {
 
                     />
                   </div>
-                  {/* <button
-                    type="button"
-                    className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black items-center justify-center"
-                    onClick={submitContact}
-                  >
-                    Send Message
-                  </button> */}
-                   <div>
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : (
-        <button
-          type="button"
-          className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black items-center justify-center"
-          onClick={submitContact}
-        >
-          Send Message
-        </button>
-      )}
-    </div>
-                  
+                  <div>
+                    {isLoading ? (
+                      <LoadingSpinner />
+                    ) : (
+                      <button
+                        type="button"
+                        className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black items-center justify-center"
+                        onClick={submitContact}
+                      >
+                        Send Message
+                      </button>
+                    )}
+                {popupMessage && (
+                  <div className="popup-message">
+                    {popupMessage}
+                  </div>
+                )}
+                  </div>
                 </form>
               </div>
             </div>
