@@ -16,8 +16,9 @@ const menuItems = [
     href: '#',
   },
   {
-    name: 'About',
-    href: '#',
+    name: 'Chatrooms',
+    // href: 'https://stray-aid-connect-chatrooms.vercel.app/',
+    // target: '#blank'
   },
   {
     name: 'Contact',
@@ -204,7 +205,7 @@ export function LandingPageOne() {
         <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
           <div className="flex flex-col justify-center px-4 py-12 md:py-16 lg:col-span-7 lg:gap-x-6 lg:px-6 lg:py-24 xl:col-span-6">
             <div className="mt-8 flex max-w-max items-center space-x-2 rounded-full bg-gray-100 p-1">
-              <div className="rounded-full bg-white p-1 px-2">
+              <div className="rounded-full bg-white p-1 px-4">
                 <p className="text-sm font-medium">Let&apos; make a difference</p>
               </div>
 
@@ -222,7 +223,7 @@ export function LandingPageOne() {
               {/* A stray is a domestic animal, fowl, etc, that has wandered away and is lost. The dog was a stray which had been adopted. A stray dog or cat has wandered away from its owner&apos;s home. A stray dog came up to him. */}
               Join us by making a community to help strays, and help them!
               <p>
-                strayAidConnect is a self sustainable web, that let you join the chatroom for your specific city 
+                <b>strayAidConnect</b> is a self sustainable web, that let you join the chatroom for your specific city 
                 and help the strays in your city.
               </p>
             </p>
