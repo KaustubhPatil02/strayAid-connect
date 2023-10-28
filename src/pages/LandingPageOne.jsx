@@ -222,7 +222,8 @@ export function LandingPageOne() {
               {/* A stray is a domestic animal, fowl, etc, that has wandered away and is lost. The dog was a stray which had been adopted. A stray dog or cat has wandered away from its owner&apos;s home. A stray dog came up to him. */}
               Join us by making a community to help strays, and help them!
               <p>
-                strayAidConnect is a self sustainable web
+                strayAidConnect is a self sustainable web, that let you join the chatroom for your specific city 
+                and help the strays in your city.
               </p>
             </p>
             {/* <form action="" className="mt-8 flex items-start space-x-2">
