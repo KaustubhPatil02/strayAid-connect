@@ -94,8 +94,7 @@ export function LandingPageOne() {
         }
       )
 
-      if (res.ok) 
-      {
+      if (res.ok) {
         setContact({
           firstName: "",
           lastName: "",
@@ -112,7 +111,7 @@ export function LandingPageOne() {
       setPopupMessage('Data not submitted due to an error.');
     }
   };
-  
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -192,7 +191,7 @@ export function LandingPageOne() {
                       ))}
                     </nav>
                   </div>
-                 
+
 
                 </div>
               </div>
@@ -208,7 +207,7 @@ export function LandingPageOne() {
               <div className="rounded-full bg-white p-1 px-2">
                 <p className="text-sm font-medium">Let&apos; make a difference</p>
               </div>
-           
+
 
               <a href="https://stray-aid-connect-chatrooms.vercel.app/" target='blank'>
                 <p className="text-sm font-medium cursor-pointer"
@@ -217,14 +216,14 @@ export function LandingPageOne() {
               </a>
             </div>
             <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-6xl">
-             For People who care about strays
+              For People who care about strays
             </h1>
             <p className="mt-8 text-lg text-gray-700">
               {/* A stray is a domestic animal, fowl, etc, that has wandered away and is lost. The dog was a stray which had been adopted. A stray dog or cat has wandered away from its owner&apos;s home. A stray dog came up to him. */}
-              Join us by making a community to help strays. 
+              Join us by making a community to help strays, and help them!
               <p>
-              strayAidConnect is a self sustainable web
-                </p>
+                strayAidConnect is a self sustainable web
+              </p>
             </p>
             {/* <form action="" className="mt-8 flex items-start space-x-2">
                   <div>
@@ -437,7 +436,7 @@ export function LandingPageOne() {
           </p>
         </div>
       </section>
-     
+
       {/* NewsLetter */}
       {/* <div className="mx-auto max-w-7xl bg-gray-50 px-2 py-10 lg:px-2">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
@@ -489,7 +488,7 @@ export function LandingPageOne() {
           </div> 
 
        {/* footer  */}
-       {/* <div className="mx-auto mt-12 max-w-7xl">
+      {/* <div className="mx-auto mt-12 max-w-7xl">
             <footer className="px-4 py-10">
               <div className="flex flex-col md:flex-row md:items-center">
                 <span>
@@ -700,11 +699,11 @@ export function LandingPageOne() {
                         Send Message
                       </button>
                     )}
-                {popupMessage && (
-                  <div className="popup-message">
-                    {popupMessage}
-                  </div>
-                )}
+                    {popupMessage && (
+                      <div className="popup-message">
+                        {popupMessage}
+                      </div>
+                    )}
                   </div>
                 </form>
               </div>
