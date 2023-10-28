@@ -221,7 +221,10 @@ export function LandingPageOne() {
             </h1>
             <p className="mt-8 text-lg text-gray-700">
               {/* A stray is a domestic animal, fowl, etc, that has wandered away and is lost. The dog was a stray which had been adopted. A stray dog or cat has wandered away from its owner&apos;s home. A stray dog came up to him. */}
+              Join us by making a community to help strays. 
+              <p>
               strayAidConnect is a self sustainable web
+                </p>
             </p>
             {/* <form action="" className="mt-8 flex items-start space-x-2">
                   <div>
