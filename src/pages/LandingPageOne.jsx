@@ -1,13 +1,14 @@
 'use client'
+// import { Route } from 'react-router-dom';
+
 import React, { useState } from 'react';
 import {
   ChevronDown,
   //  ChevronUp, Link, 
   Menu, X
 } from 'lucide-react'
-// import { useNavigate } from 'react-router-dom';
-// import { Link } from "react-router-dom";
 import './firebase'
+// import vol from'../assets/vol.jpg'
 
 
 const menuItems = [
@@ -17,8 +18,8 @@ const menuItems = [
   },
   {
     name: 'Chatrooms',
-    // href: 'https://stray-aid-connect-chatrooms.vercel.app/',
-    // target: '#blank'
+    path: './VolunteeringForm.jsx'
+   
   },
   {
     name: 'Contact',
@@ -29,6 +30,7 @@ const menuItems = [
     href: '#faq',
   },
 ]
+
 
 const LoadingSpinner = () => {
   return (
@@ -135,6 +137,7 @@ export function LandingPageOne() {
                     className="text-sm font-semibold text-gray-800 hover:text-gray-900"
                   >
                     {item.name}
+                    
                   </a>
                 </li>
               ))}
@@ -307,6 +310,7 @@ export function LandingPageOne() {
           </div>
           <div>
             <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
+              {/* <img src={vol} alt="" /> */}
               <svg
                 className="h-9 w-9 text-green-600"
                 xmlns="http://www.w3.org/2000/svg"
@@ -322,7 +326,7 @@ export function LandingPageOne() {
                 />
               </svg>
             </div>
-            <h3 className="mt-8 text-lg font-semibold text-black">Light & Dark Version</h3>
+            <h3 className="mt-8 text-lg font-semibold text-black">Volunteers</h3>
             <p className="mt-4 text-sm text-gray-600">
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
               officia consequat duis enim velit mollit.
