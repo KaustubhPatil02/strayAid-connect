@@ -4,7 +4,6 @@ import LandingPageOne from "./pages/LandingPageOne";
 import { SignUp } from "./pages/SignUp";
 import { VolunteeringForm } from "./pages/VolunteeringForm";
 import Reports from "./pages/Reports";
-// import { Report } from "./pages/Reports";
 
 function App() {
   return (

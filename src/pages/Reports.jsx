@@ -3,7 +3,9 @@ import './firebase'
 const LoadingSpinner = () => {
   return (
     <div className="flex items-center justify-center">
-      <div className="animate-spin h-6 w-6 border-t-2 border-black border-r-2 border-b-2 border-blue-200 rounded-full"></div>
+      <div className="animate-spin h-6 w-6 border-t-2
+    //    border-black
+        border-r-4 border-b-7 border-blue-200 rounded-full"></div>
     </div>
   );
 };
