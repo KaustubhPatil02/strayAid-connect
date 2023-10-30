@@ -18,7 +18,8 @@ const menuItems = [
   },
   {
     name: 'Volunteers',
-    // path: './VolunteeringForm.jsx',
+    // path: './VolunteeringForm',
+    target: '_blank',
     
     href: './volunteeringForm',
 
@@ -30,6 +31,12 @@ const menuItems = [
   {
     name: 'FAQs',
     href: '#faq',
+  },
+  { name: 'Report',
+  target: '_blank',
+  
+  href: './reporting',
+
   },
 ]
 

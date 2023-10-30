@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import './firebase'
+import './LandingPageOne'
 const LoadingSpinner = () => {
   return (
     <div className="flex items-center justify-center">
@@ -85,6 +86,17 @@ export function Reports() {
 
   return (
     <section>
+      <header className="sticky top-0 z-30 w-full border-b bg-white pb-2 ">
+        <div className="mx-auto flex max--7xl items-center justify-between px-4 py-2">
+          <div className="inline-flex items-center space-x-2 ">
+           <a href="/">
+           <span className="font-bold">Go Back </span>
+           </a>
+           
+          </div>
+
+        </div>
+      </header>
       <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
           <div className="mb-2 flex justify-center">
