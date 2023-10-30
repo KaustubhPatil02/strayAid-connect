@@ -35,9 +35,8 @@ const menuItems = [
     href: '#faq',
   },
   { name: 'Report',
-  target: '_blank',
-  
-  href: './reporting',
+    to: './reporting',
+    component: Link,
 
   },
 ]
