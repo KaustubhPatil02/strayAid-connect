@@ -9,7 +9,6 @@ import {
 } from 'lucide-react'
 import './firebase'
 import { Link } from "react-router-dom";
-// import VolunteeringForm from './VolunteeringForm';
 
 
 const menuItems = [
@@ -18,8 +17,7 @@ const menuItems = [
     href: '#',
   },
   {
-    name: 'Volunteers',
-    // target: '_blank', 
+    name: 'Become an Volunteer',
     href: './volunteeringForm',
     to: './VolunteeringForm',
     component: Link,
@@ -65,7 +63,11 @@ export function LandingPageOne() {
     phoneNum: "",
     msg: "",
   });
+  const [shelterData , setshelterData] = useState({
+    email:" "
+  })
 
+  
   let name, value;
 
   const postContactForm = (event) => {
@@ -73,6 +75,12 @@ export function LandingPageOne() {
     value = event.target.value;
     setContact({ ...contactData, [name]: value });
   };
+  const postShelterData = (event)  =>
+   {
+    name = event.target.name;
+    value = event.target.value;
+    setshelterData({...shelterData,[name]: value});
+   };
 
   // Firebase connection
   const submitContact = async (event) => {
@@ -126,6 +134,100 @@ export function LandingPageOne() {
       setPopupMessage('Data not submitted due to an error.');
     }
   };
+
+
+
+  const submitShelterMail = async (event) => {
+    setIsLoading(true);
+    setTimeout(() => {
+      // Reset isLoading to false after a 2-second delay.
+      setIsLoading(false);
+    }, 1500);
+    event.preventDefault();
+    const { email } = shelterData;
+  
+    if (!email) {
+      setPopupMessage('Please Enter proper email Address.');
+      return; // Return early if the email field is empty.
+    }
+    try {
+      if (email.trim() === '') {
+        setPopupMessage('Please Enter proper email Address.');
+        return; // Return early if the email field is empty after trimming whitespace.
+      }
+      const res = await fetch(
+        'https://strayaid-connect-default-rtdb.firebaseio.com/landingPage-AnimalShelterHome-Emails.json',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email
+          }),
+        }
+      );
+  
+      if (res.ok) {
+        setContact({
+          email: '',
+        });
+        setPopupMessage('Email submitted successfully');
+      } else {
+        setPopupMessage('Email not submitted. Please try again.');
+      }
+    } catch (error) {
+      // console.error('Error:', error);
+      setPopupMessage('Data not submitted due to an error.');
+    }
+  };
+
+
+
+  // const submitShelterMail = async (event) => {
+  //   setIsLoading(true);
+  //   setTimeout(() => {
+  //     // Reset isLoading to false after a 2-second delay.
+  //     setIsLoading(false);
+  //   }, 1500);
+  //   event.preventDefault();
+  //   const { email} = shelterData;
+
+  //   if (!email) {
+  //     setPopupMessage('Please Enter proper email Address.');
+  //     return;
+  //   } else {
+  //     setPopupMessage('We got it, Thanks for sharing us!'); // Clear the pop-up message if all fields are filled.
+  //   }
+  //   try {
+  //     const res = await fetch(
+  //       'https://strayaid-connect-default-rtdb.firebaseio.com/landingPage-AnimalShelterHome-Emails.json',
+  //       {
+  //         method: 'POST',
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify({
+  //           email
+            
+  //         }),
+  //       }
+  //     )
+
+  //     if (res.ok) {
+  //       setContact({
+  //         email: "",          
+  //       })
+  //       setPopupMessage('Email submitted successfully');
+  //     } else {
+  //       setPopupMessage('Email not submitted. Please try again.');
+  //     }
+  //   } 
+  //   catch (error) {
+  //     // console.error('Error:', error);
+  //     setPopupMessage('Data not submitted due to an error.');
+  //   }
+  // };
 
 
   const toggleMenu = () => {
@@ -237,25 +339,50 @@ export function LandingPageOne() {
                 and help the strays in your city.
               </p>
             </p>
-            {/* <form action="" className="mt-8 flex items-start space-x-2">
+            <form action="POST" className="mt-8 flex items-start space-x-2">
                   <div>
                     <input
                       className="flex w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                       type="email"
                       placeholder="Enter your email"
                       id="email"
+                      name='email'
+                      value={shelterData.email}
+                      onChange={postShelterData}
+                      style={{ color: 'black' }}
                     ></input>
-                    <p className="mt-2 text-sm text-gray-500">We care about your privacy</p>
+                    <p className="mt-2 text-sm text-gray-500">Register your Animal Shelter Home, we will reach you out!</p>
+                    {/* <p className="mt-2 text-sm text-gray-500">We care about your privacy</p> */}
                   </div>
-                  <div>
+                  {/* <div>
                     <button
                       type="button"
                       className="rounded-md bg-black px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                      // onChange={postShelterData}
+                      onClick={submitShelterMail}
                     >
-                      Subscribe
+                      Register
                     </button>
+                  </div> */}
+                    <div>
+                    {isLoading ? (
+                      <LoadingSpinner />
+                    ) : (
+                      <button
+                        type="button"
+                        className="rounded-md bg-black px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                        onClick={submitShelterMail}
+                      >
+                        Register Us
+                      </button>
+                    )}
+                    {popupMessage && (
+                      <div className="popup-message">
+                        {popupMessage}
+                      </div>
+                    )}
                   </div>
-                </form> */}
+                </form>
           </div>
           <div className="relative lg:col-span-5 lg:-mr-8 xl:col-span-6">
             <img
@@ -267,7 +394,7 @@ export function LandingPageOne() {
         </div>
       </div>
       {/* Features Section */}
-      <div className="mx-auto my-32 max-w-7xl px-2 lg:px-8">
+      <div className="mx-auto my-32 max-w-9xl px-2 lg:px-8">
         <div className="grid grid-cols-1 gap-y-8 text-center sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
           <div>
             <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-100">
@@ -286,10 +413,9 @@ export function LandingPageOne() {
                 />
               </svg>
             </div>
-            <h3 className="mt-8 text-lg font-semibold text-black">Networks of organizations</h3>
+            <h3 className="mt-8 text-lg font-semibold text-black">Chatroom Fetching</h3>
             <p className="mt-4 text-sm text-gray-600">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-              officia consequat duis enim velit mollit.
+              Once the users are SignedIn in the system they can join the chatroom of their respective city by searching the chatroom of it.
             </p>
           </div>
           <div>
@@ -311,8 +437,7 @@ export function LandingPageOne() {
             </div>
             <h3 className="mt-8 text-lg font-semibold text-black">Accident Reports</h3>
             <p className="mt-4 text-sm text-gray-600">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-              officia consequat duis enim velit mollit.
+              Users can file an report in case of an accident with the stray animals. The volunteers can help the strays in the region. or the users can report to the chatroom Admin.
             </p>
           </div>
           <div>
@@ -335,8 +460,7 @@ export function LandingPageOne() {
             </div>
             <h3 className="mt-8 text-lg font-semibold text-black">Volunteers</h3>
             <p className="mt-4 text-sm text-gray-600">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-              officia consequat duis enim velit mollit.
+              Users and volunteers can join the community and help the strays in their region. Users just have to submit their details in the volunteeringForm and they will be added as Volunteers
             </p>
           </div>
           <div>
@@ -358,8 +482,7 @@ export function LandingPageOne() {
             </div>
             <h3 className="mt-8 text-lg font-semibold text-black">Transperency</h3>
             <p className="mt-4 text-sm text-gray-600">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-              officia consequat duis enim velit mollit.
+              The users can view and track their donations and the usage of the donations via the main Animal Shelter Home in the region
             </p>
           </div>
         </div>
