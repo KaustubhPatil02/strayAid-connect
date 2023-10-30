@@ -137,7 +137,7 @@ export function LandingPageOne() {
       <header className="sticky top-0 z-50 w-full border-b bg-white pb-4 ">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-1 py-4">
           <div className="inline-flex items-center space-x-2 ">
-            <span className="font-bold">strayAidConnect</span>
+            <span className="font-bold">StrayAidConnect</span>
           </div>
           <div className="hidden lg:block">
             <ul className="inline-flex space-x-16 ">
@@ -233,7 +233,7 @@ export function LandingPageOne() {
               {/* A stray is a domestic animal, fowl, etc, that has wandered away and is lost. The dog was a stray which had been adopted. A stray dog or cat has wandered away from its owner&apos;s home. A stray dog came up to him. */}
               Join us by making a community to help strays, and help them!
               <p>
-                <b>strayAidConnect</b> is a self sustainable web, that let you join the chatroom for your specific city
+                <b>StrayAidConnect</b> is a self sustainable web, that let you join the chatroom for your specific city
                 and help the strays in your city.
               </p>
             </p>
@@ -382,7 +382,7 @@ export function LandingPageOne() {
                 type="button"
                 className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
               >
-                <span className="flex text-lg font-semibold text-black">What is strayAid-Connect?</span>
+                <span className="flex text-lg font-semibold text-black">What is StrayAid-Connect?</span>
 
                 <ChevronDown className="h-5 w-5 text-gray-500" />
               </button>
@@ -788,7 +788,7 @@ export function LandingPageOne() {
           </div>
         </div>
       </div>
-      <p className="text-xs  text-gray-700 md:text-base text-center">© 2023-strayAidConnect </p>
+      <p className="text-xs  text-gray-700 md:text-base text-center">© 2023-StrayAidConnect </p>
     </div>
 
     //     </div>

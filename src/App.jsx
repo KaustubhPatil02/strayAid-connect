@@ -1,7 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { SignIn } from "./pages/SignIn";
 import LandingPageOne from "./pages/LandingPageOne";
-import { SignUp } from "./pages/SignUp";
 import { VolunteeringForm } from "./pages/VolunteeringForm";
 import Reports from "./pages/Reports";
 
@@ -11,8 +9,6 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<LandingPageOne />} />
-          <Route path="/SignIn" element={<SignIn />} />
-          <Route path="/SignUp" element={<SignUp />} />
           <Route path="/VolunteeringForm" element={<VolunteeringForm />} />
           <Route path="/Reports" element={<Reports />} />
           {/* <Reports/> */}
