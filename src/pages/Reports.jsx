@@ -105,7 +105,7 @@ export function Reports() {
               <div className="px-2 md:px-12">
                 <p className="mt-4 text-lg text-gray-600">
                     
-            <p className="text-2xl font-bold text-gray-900 md:text-4xl justify-center flex"> Incident Rporting </p>
+            <p className="text-2xl font-bold text-gray-900 md:text-4xl justify-center flex"> Incident Reporting </p>
                 </p>
                 <form className="mt-8 space-y-4">
                   <div className="grid w-full  items-center gap-1.5">
