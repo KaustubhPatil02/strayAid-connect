@@ -9,14 +9,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/"> */}
+        <Route path="/">
           <Route index element={<LandingPageOne />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/VolunteeringForm" element={<VolunteeringForm />} />
           <Route path="/Reports" element={<Reports />} />
           {/* <Reports/> */}
-        {/* </Route> */}
+        </Route>
       </Routes>
     </BrowserRouter>
   );
