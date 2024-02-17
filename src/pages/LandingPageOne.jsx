@@ -68,11 +68,11 @@ export function LandingPageOne() {
     phoneNum: "",
     msg: "",
   });
-  const [shelterData , setshelterData] = useState({
-    email:" "
+  const [shelterData, setshelterData] = useState({
+    email: " "
   })
 
-  
+
   let name, value;
 
   const postContactForm = (event) => {
@@ -80,12 +80,11 @@ export function LandingPageOne() {
     value = event.target.value;
     setContact({ ...contactData, [name]: value });
   };
-  const postShelterData = (event)  =>
-   {
+  const postShelterData = (event) => {
     name = event.target.name;
     value = event.target.value;
-    setshelterData({...shelterData,[name]: value});
-   };
+    setshelterData({ ...shelterData, [name]: value });
+  };
 
   // Firebase connection
   const submitContact = async (event) => {
@@ -150,7 +149,7 @@ export function LandingPageOne() {
     }, 1500);
     event.preventDefault();
     const { email } = shelterData;
-  
+
     if (!email) {
       setPopupMessage('Please Enter proper email Address.');
       return; // Return early if the email field is empty.
@@ -172,7 +171,7 @@ export function LandingPageOne() {
           }),
         }
       );
-  
+
       if (res.ok) {
         setContact({
           email: '',
@@ -214,7 +213,7 @@ export function LandingPageOne() {
   //         },
   //         body: JSON.stringify({
   //           email
-            
+
   //         }),
   //       }
   //     )
@@ -257,12 +256,12 @@ export function LandingPageOne() {
               {menuItems.map((item) => (
                 <li key={item.name}>
                   {item.component ? (
-                    <item.component
+                    <Link
                       to={item.to}
                       className="text-sm font-semibold text-gray-800 hover:text-gray-900"
                     >
                       {item.name}
-                    </item.component>
+                    </Link>
                   ) : (
                     <a
                       href={item.href}
@@ -351,21 +350,21 @@ export function LandingPageOne() {
               </p>
             </p>
             <form action="POST" className="mt-8 flex items-start space-x-2">
-                  <div>
-                    <input
-                      className="flex w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                      type="email"
-                      placeholder="Enter your email"
-                      id="email"
-                      name='email'
-                      value={shelterData.email}
-                      onChange={postShelterData}
-                      style={{ color: 'black' }}
-                    ></input>
-                    <p className="mt-2 text-sm text-gray-500">Register your Animal Shelter Home, we will reach you out!</p>
-                    {/* <p className="mt-2 text-sm text-gray-500">We care about your privacy</p> */}
-                  </div>
-                  {/* <div>
+              <div>
+                <input
+                  className="flex w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                  type="email"
+                  placeholder="Enter your email"
+                  id="email"
+                  name='email'
+                  value={shelterData.email}
+                  onChange={postShelterData}
+                  style={{ color: 'black' }}
+                ></input>
+                <p className="mt-2 text-sm text-gray-500">Register your Animal Shelter Home, we will reach you out!</p>
+                {/* <p className="mt-2 text-sm text-gray-500">We care about your privacy</p> */}
+              </div>
+              {/* <div>
                     <button
                       type="button"
                       className="rounded-md bg-black px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
@@ -375,25 +374,25 @@ export function LandingPageOne() {
                       Register
                     </button>
                   </div> */}
-                    <div>
-                    {isLoading ? (
-                      <LoadingSpinner />
-                    ) : (
-                      <button
-                        type="button"
-                        className="rounded-md bg-black px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                        onClick={submitShelterMail}
-                      >
-                        Register Us
-                      </button>
-                    )}
-                    {popupMessage && (
-                      <div className="popup-message">
-                        {popupMessage}
-                      </div>
-                    )}
+              <div>
+                {isLoading ? (
+                  <LoadingSpinner />
+                ) : (
+                  <button
+                    type="button"
+                    className="rounded-md bg-black px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                    onClick={submitShelterMail}
+                  >
+                    Register Us
+                  </button>
+                )}
+                {popupMessage && (
+                  <div className="popup-message">
+                    {popupMessage}
                   </div>
-                </form>
+                )}
+              </div>
+            </form>
           </div>
           <div className="relative lg:col-span-5 lg:-mr-8 xl:col-span-6">
             <img
@@ -498,36 +497,36 @@ export function LandingPageOne() {
         </div>
       </div> */}
 
-<div className="px-2 py-2 md:px-6 md:py-10">
-      <h1 className="text-2xl font-bold capitalize text-black lg:text-3xl">
-        Our Features
-      </h1>
-      {/* <p className="my-2 text-gray-600">
+      <div className="px-2 py-2 md:px-6 md:py-10">
+        <h1 className="text-2xl font-bold capitalize text-black lg:text-3xl">
+          Our Features
+        </h1>
+        {/* <p className="my-2 text-gray-600">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus
       </p> */}
-      <hr />
-      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3 xl:gap-16">
-        {Array.from({ length: 4 }).map((_, i) => (
-          <div key={i} className="space-y-3">
-            {/* <span className="inline-block rounded-full bg-gray-100 p-3 text-black">
+        <hr />
+        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3 xl:gap-16">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div key={i} className="space-y-3">
+              {/* <span className="inline-block rounded-full bg-gray-100 p-3 text-black">
               <Copy size={20} />  
             </span> */}
-            <h1 className="text-xl font-semibold capitalize text-black">{headings[i]}</h1>
-            <p className="text-sm text-gray-500">
-              {descriptions[i]}
-           {headings[i] === 'Chatroom Fetching' ? 'Once the users are SignedIn in the system they can join the chatroom of their respective city by searching the chatroom of it.' : ''}
-            </p>
-            <a
-              href="#"
-              className="-mx-1 inline-flex transform items-center text-sm font-semibold capitalize text-black transition-colors duration-300 hover:underline"
-            >
-              {/* <span className="mx-1">read more</span> */}
-              <ArrowRight size={16} />
-            </a>
-          </div>
-        ))}
+              <h1 className="text-xl font-semibold capitalize text-black">{headings[i]}</h1>
+              <p className="text-sm text-gray-500">
+                {descriptions[i]}
+                {headings[i] === 'Chatroom Fetching' ? 'Once the users are SignedIn in the system they can join the chatroom of their respective city by searching the chatroom of it.' : ''}
+              </p>
+              <a
+                href="#"
+                className="-mx-1 inline-flex transform items-center text-sm font-semibold capitalize text-black transition-colors duration-300 hover:underline"
+              >
+                {/* <span className="mx-1">read more</span> */}
+                <ArrowRight size={16} />
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
       {/* FAQs */}
       <section className="mx-auto max-w-7xl bg-gray-50 px-2 py-10 md:px-0" id='faq'>
         <div>
