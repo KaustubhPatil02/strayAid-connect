@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import {
   ChevronDown,
   //  ChevronUp, Link, 
-  Menu, X
+  Menu, X, ArrowRight, Star, Copy
 } from 'lucide-react'
 import './firebase'
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ const menuItems = [
   },
   {
     name: 'Become an Volunteer',
-    href: './volunteeringForm',
+    href: './VolunteeringForm',
     to: './VolunteeringForm',
     component: Link,
 
@@ -36,7 +36,12 @@ const menuItems = [
     href: './Reports',
     to: './Reports',
     component: Link,
-
+  },
+  {
+    name: 'Adoptation',
+    href: './Adoptation',
+    to: './Adoptation',
+    component: Link,
 
   },
 ]
@@ -228,7 +233,13 @@ export function LandingPageOne() {
   //     setPopupMessage('Data not submitted due to an error.');
   //   }
   // };
-
+  const headings = ['Chatroom Fetching', 'Accident Reports', 'Volunteers', 'Notification System'];
+  const descriptions = [
+    'Description for Chatroom Fetching',
+    'Users can file an report in case of an accident with the stray animals. The volunteers can help the strays in the region. or the users can report to the chatroom Admin.',
+    'Users and volunteers can join the community and help the strays in their region. Users just have to submit their details in the volunteeringForm and they will be added as Volunteers',
+    'The users can view and track their donations and the usage of the donations via the main Animal Shelter Home in the region'
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -394,7 +405,7 @@ export function LandingPageOne() {
         </div>
       </div>
       {/* Features Section */}
-      <div className="mx-auto my-32 max-w-9xl px-2 lg:px-8">
+      {/* <div className="mx-auto my-32 max-w-9xl px-2 lg:px-8">
         <div className="grid grid-cols-1 gap-y-8 text-center sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
           <div>
             <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-100">
@@ -442,7 +453,6 @@ export function LandingPageOne() {
           </div>
           <div>
             <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
-              {/* <img src={vol} alt="" /> */}
               <svg
                 className="h-9 w-9 text-green-600"
                 xmlns="http://www.w3.org/2000/svg"
@@ -486,7 +496,38 @@ export function LandingPageOne() {
             </p>
           </div>
         </div>
+      </div> */}
+
+<div className="px-2 py-2 md:px-6 md:py-10">
+      <h1 className="text-2xl font-bold capitalize text-black lg:text-3xl">
+        Our Features
+      </h1>
+      {/* <p className="my-2 text-gray-600">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus
+      </p> */}
+      <hr />
+      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3 xl:gap-16">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <div key={i} className="space-y-3">
+            {/* <span className="inline-block rounded-full bg-gray-100 p-3 text-black">
+              <Copy size={20} />  
+            </span> */}
+            <h1 className="text-xl font-semibold capitalize text-black">{headings[i]}</h1>
+            <p className="text-sm text-gray-500">
+              {descriptions[i]}
+           {headings[i] === 'Chatroom Fetching' ? 'Once the users are SignedIn in the system they can join the chatroom of their respective city by searching the chatroom of it.' : ''}
+            </p>
+            <a
+              href="#"
+              className="-mx-1 inline-flex transform items-center text-sm font-semibold capitalize text-black transition-colors duration-300 hover:underline"
+            >
+              {/* <span className="mx-1">read more</span> */}
+              <ArrowRight size={16} />
+            </a>
+          </div>
+        ))}
       </div>
+    </div>
       {/* FAQs */}
       <section className="mx-auto max-w-7xl bg-gray-50 px-2 py-10 md:px-0" id='faq'>
         <div>
