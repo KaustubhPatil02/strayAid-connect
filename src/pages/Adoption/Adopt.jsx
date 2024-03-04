@@ -139,6 +139,7 @@ export const Adopt = () => {
         </button>
       </div>
       </section>
+      <hr className="mt-6" />
       <footer className='px-4 py-10 sticky'>
         <p className="text-xs font-semibold text-gray-900 md:text-base text-center ">© 2023-StrayAidConnect </p>
 

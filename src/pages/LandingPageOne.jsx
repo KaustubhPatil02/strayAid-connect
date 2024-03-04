@@ -356,7 +356,7 @@ export function LandingPageOne() {
               </div>
 
 
-              <a href="https://stray-aid-connect-chatrooms.vercel.app/" target='blank'>
+              <a href="http://localhost:3000" target='blank'>
                 <p className="text-sm font-medium cursor-pointer"
                 >Join the community &rarr;
                 </p>
@@ -789,9 +789,7 @@ export function LandingPageOne() {
       <p className="text-xs  text-gray-700 md:text-base text-center">© 2023-StrayAidConnect </p>
     </div>
 
-    //     </div>
-    //   </section>
-    //     </div>
+ 
   )
 }
 

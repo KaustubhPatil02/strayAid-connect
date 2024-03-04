@@ -1,6 +1,6 @@
 // reducer.js
 
-import { RESET_DONATION_PROGRESS, SET_ADMIN_STATUS } from './actions';
+import { RESET_DONATION_PROGRESS, SET_ADMIN_STATUS } from '../actions';
 
 const initialState = {
   isAdmin: false,

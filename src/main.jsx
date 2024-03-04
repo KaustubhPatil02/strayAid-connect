@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import store from './pages/store'; // Your Redux store
-import StripeProvider from './pages/StripeProvider';
+import store from './pages/Donation/store'; // Your Redux store
+import StripeProvider from './pages/Donation/StripeProvider';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
