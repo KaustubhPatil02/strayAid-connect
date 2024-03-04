@@ -43,7 +43,13 @@ const menuItems = [
     href: './Adopt',
     to: './Adopt',
     component: Link,
-
+    
+  },
+  {
+    name: 'Donation',
+    href: './MainDonation',
+    to: './MainDonation',
+    component: Link,
   },
 ]
 
