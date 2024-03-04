@@ -9,20 +9,20 @@ import { List2 } from "./pages/Adoption/AdoptList/List2";
 // import { Donation } from "./pages/Donation/Donation";
 function App() {
   return (
-    // <Donation/>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/">
-          <Route index element={<LandingPageOne />} />
-          <Route path="/VolunteeringForm" element={<VolunteeringForm />} />
-          <Route path="/Reports" element={<Reports />} />
-          <Route path="/Adopt" element={<Adopt />} />
-          <Route path="/List1" element={<List1 />} />
-          <Route path="/List2" element={<List2 />} />
-          {/* <Reports/> */}
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Donation/>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/">
+    //       <Route index element={<LandingPageOne />} />
+    //       <Route path="/VolunteeringForm" element={<VolunteeringForm />} />
+    //       <Route path="/Reports" element={<Reports />} />
+    //       <Route path="/Adopt" element={<Adopt />} />
+    //       <Route path="/List1" element={<List1 />} />
+    //       <Route path="/List2" element={<List2 />} />
+    //       {/* <Reports/> */}
+    //     </Route>
+    //   </Routes>
+    // </BrowserRouter>
   );
 }
 
