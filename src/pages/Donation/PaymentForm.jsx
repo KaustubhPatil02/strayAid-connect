@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import '../App.css'
+// import '../App.css'
 const PaymentForm = ({ onPaymentSuccess }) => {
   const stripe = useStripe();
   const elements = useElements();

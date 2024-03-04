@@ -40,3 +40,70 @@
 .read-the-docs {
   color: #888;
 } */
+
+
+
+
+
+
+/* Styles for Donation Button */
+.donation-button {
+  background-color: #4caf50; /* Green color */
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 3%;
+  margin-top: 1%;
+  margin-right: 1%;
+  margin-left: 2%;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Styles for Donation Form Input Field */
+.donation-input {
+  width: 10%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styles for Progress Bar */
+.progress-bar {
+  width: 100%;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-left: 2%;
+}
+
+.progress-fill {
+  height: 30px;
+  background-color: #4caf50; /* Green color */
+  border-radius: 5px;
+}
+
+/* Styles for Image */
+.image-container {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-left: 10px;
+}
