@@ -1,17 +1,18 @@
 import {useState} from 'react'
-// import { ArrowRight } from 'lucide-react'
-import './firebase'
+import '../firebase'
 import './LandingPageOne'
 const LoadingSpinner = () => {
   return (
     <div className="flex items-center justify-center">
-      <div className="animate-spin h-6 w-6 border-t-2 border-black border-r-2 border-b-2 border-blue-200 rounded-full"></div>
+      <div className="animate-spin h-6 w-6 border-t-2
+    //    border-black
+        border-r-4 border-b-7 border-blue-200 rounded-full"></div>
     </div>
   );
 };
 
 
-export function VolunteeringForm() {
+export function Reports() {
   const [popupMessage, setPopupMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -36,17 +37,17 @@ export function VolunteeringForm() {
     setTimeout(() => {
       // Reset isLoading to false after a 2-second delay.
       setIsLoading(false);
-    }, 1500);
+    }, 1800);
   
     event.preventDefault();
-    const { firstName, lastName, email, phoneNum, loc } = volunteersData;
+    const { firstName, msg, email, phoneNum, loc } = volunteersData;
     let popupMessage = '';
-    if (!firstName || !lastName || !email || !phoneNum || !loc) {
-      popupMessage = 'Please fill out all fields before submitting.';
+    if (!firstName || !msg || !email || !phoneNum || !loc) {
+      popupMessage = 'Please fill out all fields before submitting report.';
     } else {
       try {
         const res = await fetch(
-          'https://strayaid-connect-default-rtdb.firebaseio.com/landingPage-VolunteersData.json',
+          'https://strayaid-connect-default-rtdb.firebaseio.com/landingPage-Reporting.json',
           {
             method: 'POST',
             headers: {
@@ -54,7 +55,7 @@ export function VolunteeringForm() {
             },
             body: JSON.stringify({
               firstName,
-              lastName,
+              msg,
               email,
               phoneNum,
               loc,
@@ -65,18 +66,18 @@ export function VolunteeringForm() {
         if (res.ok) {
           setvolunteersData({
             firstName: '',
-            lastName: '',
+            msg: '',
             email: '',
             phoneNum: '',
             loc: '',
           });
-          popupMessage = 'Data submitted successfully';
+          popupMessage = 'Report submitted successfully';
         } else {
-          popupMessage = 'Data not submitted. Please try again.';
+          popupMessage = 'Report not submitted. Please try again.';
         }
       } catch (error) {
         // console.error('Error:', error);
-        popupMessage = 'Data not submitted due to an error.';
+        popupMessage = 'Report not submitted due to an internal error.';
       }
     }
     setPopupMessage(popupMessage);
@@ -97,7 +98,6 @@ export function VolunteeringForm() {
         </div>
       </header>
       <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-     
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
           <div className="mb-2 flex justify-center">
           </div>
@@ -105,7 +105,7 @@ export function VolunteeringForm() {
               <div className="px-2 md:px-12">
                 <p className="mt-4 text-lg text-gray-600">
                     
-            <p className="text-2xl font-bold text-gray-900 md:text-4xl justify-center flex"> Volunteers Info. </p>
+            <p className="text-2xl font-bold text-gray-900 md:text-4xl justify-center flex"> Incident Reporting </p>
                 </p>
                 <form className="mt-8 space-y-4">
                   <div className="grid w-full  items-center gap-1.5">
@@ -113,7 +113,7 @@ export function VolunteeringForm() {
                       className="text-sm font-medium leading-none text-gray-700"
                       htmlFor="first_name"
                     >
-                      First Name
+                      Your Name
                     </label>
                     <input
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
@@ -126,7 +126,7 @@ export function VolunteeringForm() {
                       style={{ color: 'black' }}
                     />
                   </div>
-                  <div className="grid w-full  items-center gap-1.5">
+                  {/* <div className="grid w-full  items-center gap-1.5">
                     <label
                       className="text-sm font-medium leading-none text-gray-700"
                       htmlFor="last_name"
@@ -144,7 +144,7 @@ export function VolunteeringForm() {
                       style={{ color: 'black' }}
                       
                     />
-                  </div>
+                  </div> */}
                   <div className="grid w-full  items-center gap-1.5">
                     <label
                       className="text-sm font-medium leading-none text-gray-700"
@@ -192,11 +192,30 @@ export function VolunteeringForm() {
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                       type="text"
                       id="location"
-                      placeholder="Your City"
+                      placeholder="Where it happened?"
                       name='loc'
                       value={volunteersData.loc}
                       onChange={postVolunteersData}
                       style={{ color: 'black' }}
+                    />
+                  </div>
+                  <div className="grid w-full  items-center gap-1.5">
+                    <label
+                      className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      htmlFor="message"
+                    >
+                      Reporting
+                    </label>
+                    <textarea
+                      className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
+                      id="message"
+                      placeholder="Description about incident"
+                      cols={3}
+                      name='msg'
+                      value={volunteersData.msg}
+                      onChange={postVolunteersData}
+                      style={{ color: 'black' }}
+
                     />
                   </div>
                   <div>
@@ -208,7 +227,7 @@ export function VolunteeringForm() {
                         className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black items-center justify-center"
                         onClick={submitData}
                       >
-                        Send Message
+                        Report
                       </button>
                     )}
                     {popupMessage && (
@@ -226,4 +245,4 @@ export function VolunteeringForm() {
   )
   
 }
-export default VolunteeringForm;
+export default Reports;

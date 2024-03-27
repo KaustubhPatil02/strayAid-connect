@@ -7,7 +7,7 @@ import {
   // Link, 
   Menu, X, ArrowRight,
 } from 'lucide-react'
-import './firebase'
+import '../firebase'
 import { Link } from "react-router-dom";
 // import VolunteeringForm from './VolunteeringForm';
 
@@ -45,12 +45,12 @@ const menuItems = [
     component: Link,
     
   },
-  {
-    name: 'Donation',
-    href: './MainDonation',
-    to: './MainDonation',
-    component: Link,
-  },
+  // {
+  //   name: 'Donation',
+  //   href: './MainDonation',
+  //   to: './MainDonation',
+  //   component: Link,
+  // },
 ]
 
 
@@ -257,12 +257,12 @@ export function LandingPageOne() {
   //     setPopupMessage('Data not submitted due to an error.');
   //   }
   // };
-  const headings = ['Chatroom Fetching', 'Accident Reports', 'Volunteers', 'Notification System'];
+  const headings = ['Regional Chatrooms ', 'Accident Reports', 'Volunteers', 'Notification System(Sms)'];
   const descriptions = [
-    'Description for Chatroom Fetching',
+    'When user is signed-in they are provided Regional Chatrooms ',
     'Users can file an report in case of an accident with the stray animals. The volunteers can help the strays in the region. or the users can report to the chatroom Admin.',
     'Users and volunteers can join the community and help the strays in their region. Users just have to submit their details in the volunteeringForm and they will be added as Volunteers',
-    'The users can view and track their donations and the usage of the donations via the main Animal Shelter Home in the region'
+    'Users and Volunteers will be able to get notification via an sms channel. Even if they are offline or, if they are unable to access the application via the Internet, '
   ];
 
   const toggleMenu = () => {
@@ -525,7 +525,7 @@ export function LandingPageOne() {
 
       <div className="px-2 py-2 md:px-6 md:py-10">
         <h1 className="text-2xl font-bold capitalize text-black lg:text-3xl">
-          Our Features
+           Features
         </h1>
         {/* <p className="my-2 text-gray-600">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus
