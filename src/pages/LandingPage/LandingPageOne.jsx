@@ -13,10 +13,10 @@ import { GoAlertFill } from "react-icons/go";
 import { SosModal } from './SOS/SosModal';
 
 const menuItems = [
-  {
-    name: 'Home',
-    href: '#',
-  },
+  // {
+  //   name: 'Home',
+  //   href: '#',
+  // },
   {
     name: 'Become an Volunteer',
     href: './VolunteeringForm',
@@ -51,12 +51,12 @@ const menuItems = [
     to: '/MainDonation',
     component: Link,
   },
-  {
-    name: 'SOS',
-    href: '/sos',
-    to: '/sos',
-    component: Link,
-  },
+  // {
+  //   name: 'SOS',
+  //   href: '/sos',
+  //   to: '/sos',
+  //   component: Link,
+  // },
  
 ]
 
