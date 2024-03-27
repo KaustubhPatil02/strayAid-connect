@@ -45,12 +45,12 @@ const menuItems = [
     component: Link,
     
   },
-  // {
-  //   name: 'Donation',
-  //   href: './MainDonation',
-  //   to: './MainDonation',
-  //   component: Link,
-  // },
+  {
+    name: 'Donation',
+    href: './MainDonation',
+    to: './MainDonation',
+    component: Link,
+  },
 ]
 
 
