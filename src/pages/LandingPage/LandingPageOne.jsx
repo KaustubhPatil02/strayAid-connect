@@ -10,7 +10,6 @@ import {
 import '../firebase'
 import { Link } from "react-router-dom";
 import { GoAlertFill } from "react-icons/go";
-import Modal from '../../Modals/Modal'
 import { SosModal } from './SOS/SosModal';
 
 const menuItems = [
@@ -48,16 +47,17 @@ const menuItems = [
   },
   {
     name: 'Donation',
-    href: './Donation/MainDonation.jsx',
+    href: '/MainDonation',
     to: '/MainDonation',
     component: Link,
   },
   {
     name: 'SOS',
-    href: './SOS/SosModal.jsx',
-    to: 'sos',
+    href: '/sos',
+    to: '/sos',
     component: Link,
   },
+ 
 ]
 
 
@@ -95,9 +95,14 @@ export function LandingPageOne() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleAlertClick = () => {
+  const handleOpenModal = () => {
     setIsModalOpen(true);
   };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
 
   const [contactData, setContact] = useState({
     firstName: "",
@@ -314,15 +319,25 @@ export function LandingPageOne() {
 
               ))}
 
-              {/* <GoAlertFill
-                className='hover:opacity-30 text-yellow-500 w-[2rem] h-[2rem]'
-                onClick={handleAlertClick}
-              /> */}
+<div>
+<GoAlertFill
+  onClick={handleOpenModal}
+  className='hover:opacity-30 text-yellow-500 w-[2rem] h-[2rem]'
+/>
+
+{isModalOpen && (
+  <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div className="bg-black bg-opacity-50 absolute inset-0 z-10"></div>
+    <div className="bg-white p-6 rounded-lg w-80 lg:w-1/2 z-20">
+      <SosModal/>
+      <button onClick={handleCloseModal} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Close</button>
+    </div>
+  </div>
+)}
+    </div>
+
               
-              {isModalOpen && 
-              <Modal modal={isModalOpen} setModal={setIsModalOpen} />
-              // <SosModal modal={isModalOpen} setModal ={setIsModalOpen} />
-              } {/* Render the modal component when isModalOpen is true */}
+              
             </ul>
           </div>
           <div className="hidden lg:block">
