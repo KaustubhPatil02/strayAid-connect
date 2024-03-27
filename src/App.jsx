@@ -5,13 +5,14 @@ import Reports from "./pages/LandingPage/Reports";
 import { Adopt } from "./pages/Adoption/Adopt";
 import { List1 } from "./pages/Adoption/AdoptList/List1";
 import { List2 } from "./pages/Adoption/AdoptList/List2";
-// import MainDonation from "./pages/Donation/MainDonation";
+import MainDonation from "./pages/Donation/MainDonation";
 import { List3 } from "./pages/Adoption/AdoptList/List3";
 import { List4 } from "./pages/Adoption/AdoptList/List4";
 import { List5 } from "./pages/Adoption/AdoptList/List5";
 import { List6 } from "./pages/Adoption/AdoptList/List6";
 import { List7 } from "./pages/Adoption/AdoptList/List7";
 import { List8 } from "./pages/Adoption/AdoptList/List8";
+import { SosModal } from "./pages/LandingPage/SOS/SosModal";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<LandingPageOne />} index />
         <Route path="/VolunteeringForm" element={<VolunteeringForm />} />
         <Route path="/Reports" element={<Reports />} />
+        <Route path="/sos" element={<SosModal />} />
         <Route path="/Adopt" element={<Adopt />}>
           <Route path="List1" element={<List1 />} />
           <Route path="List2" element={<List2 />} />
@@ -30,7 +32,7 @@ function App() {
           <Route path="List7" element={<List7 />} />
           <Route path="List8" element={<List8 />} />
         </Route>
-        {/* <Route path="/MainDonation" element={<MainDonation />} /> */}
+        <Route path="/MainDonation" element={<MainDonation />} />
       </Routes>
     </BrowserRouter>
   );
