@@ -9,7 +9,6 @@ import {
 } from 'lucide-react'
 import '../firebase'
 import { Link } from "react-router-dom";
-// import VolunteeringForm from './VolunteeringForm';
 
 
 const menuItems = [
@@ -21,7 +20,7 @@ const menuItems = [
     name: 'Become an Volunteer',
     href: './VolunteeringForm',
     to: './VolunteeringForm',
-    // component: Link,
+    component: Link,
 
   },
   {
