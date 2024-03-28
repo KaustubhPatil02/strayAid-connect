@@ -68,10 +68,14 @@ export function SosModal() {
   // Rest of your component...
 
   return (
-    <div className="py-10">
-      <div className="text-center">
-        <p className="text-base font-semibold text-black">SOS</p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-black sm:text-5xl">
+    // <div className="py-10 pl-10 ">
+    //   <div className="text-center">
+    //     <p className="text-base font-semibold text-black">SOS</p>
+    //     <h1 className="mt-2 text-3xl font-bold tracking-tight text-black sm:text-5xl">
+    <div className="py-10  flex flex-col items-center justify-center">
+  <div className="text-center">
+    <p className="text-base font-semibold text-black">SOS</p>
+    <h1 className="mt-2 text-3xl font-bold tracking-tight text-black sm:text-5xl">
         Nearby Emergency Service
         </h1>
         <div className='mt-5'>

@@ -1,6 +1,6 @@
 'use client'
 // import { Route } from 'react-router-dom';
-
+// import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import {
   ChevronDown, ChevronUp,
@@ -56,8 +56,9 @@ const menuItems = [
   //   href: '/sos',
   //   to: '/sos',
   //   component: Link,
+  //   className: 'md:hidden lg:hidden', // Hide on medium and larger screens
   // },
- 
+
 ]
 
 
@@ -288,7 +289,7 @@ export function LandingPageOne() {
   }
 
   return (
-   
+
     <div className="w-full no-scrollbar">
       <header className="sticky top-0 z-50 w-full border-b bg-white pb-4 ">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-1 py-4">
@@ -297,7 +298,7 @@ export function LandingPageOne() {
           </div>
           <div className="hidden lg:block">
             <ul className="inline-flex space-x-16 ">
-              {menuItems.map((item) => (
+            {menuItems.map((item) => (
                 <li key={item.name}>
                   {item.component ? (
                     <item.component
@@ -319,25 +320,25 @@ export function LandingPageOne() {
 
               ))}
 
-<div>
-<GoAlertFill
-  onClick={handleOpenModal}
-  className='hover:opacity-30 text-yellow-500 w-[2rem] h-[2rem]'
-/>
+              <div>
+                <GoAlertFill
+                  onClick={handleOpenModal}
+                  className='hover:opacity-30 text-yellow-500 w-[2rem] h-[2rem]'
+                />
 
-{isModalOpen && (
-  <div className="fixed inset-0 flex items-center justify-center z-50">
-    <div className="bg-black bg-opacity-50 absolute inset-0 z-10"></div>
-    <div className="bg-white p-6 rounded-lg w-80 lg:w-1/2 z-20">
-      <SosModal/>
-      <button onClick={handleCloseModal} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Close</button>
-    </div>
-  </div>
-)}
-    </div>
+                {isModalOpen && (
+                  <div className="fixed inset-0 flex items-center justify-center z-50">
+                    <div className="bg-black bg-opacity-50 absolute inset-0 z-10"></div>
+                    <div className="bg-white p-6 rounded-lg w-80 lg:w-1/2 z-20">
+                      <SosModal />
+                      <button onClick={handleCloseModal} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Close</button>
+                    </div>
+                  </div>
+                )}
+              </div>
 
-              
-              
+
+
             </ul>
           </div>
           <div className="hidden lg:block">
@@ -376,6 +377,14 @@ export function LandingPageOne() {
                           </span>
                         </a>
                       ))}
+                      <Link
+              to="/sos"
+              className="-m-3 flex items-center rounded-md p-3 text-sm font-semibold hover:bg-gray-50"
+            >
+              <span className="ml-3 text-base font-medium text-gray-900">
+                SOS
+              </span>
+            </Link>
                     </nav>
                   </div>
 
@@ -462,15 +471,15 @@ export function LandingPageOne() {
       </div>
 
 
-      <div className="px-2 py-2 md:px-6 md:py-10">
-        <h1 className="text-2xl font-bold capitalize text-black lg:text-3xl">
+      <div className="px-2 py-2 md:px-6 md:py-10 bg-slate-100">
+        <h1 className="text-4xl font-bold capitalize text-black lg:text-4xl items-center justify-center ">
           Features
         </h1>
         {/* <p className="my-2 text-gray-600">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus
             </p> */}
         <hr />
-        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3 xl:gap-16">
+        <div className="mt-8 grid grid-cols-2 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-2 xl:gap-16">
           {Array.from({ length: 4 }).map((_, i) => (
             <div key={i} className="space-y-3">
 
@@ -515,7 +524,7 @@ export function LandingPageOne() {
 
         {/* ... */}
       </section>
-<SosModal />
+      <SosModal />
 
       <div className="mx-auto max-w-7xl px-4">
         {/* Hero Map */}
