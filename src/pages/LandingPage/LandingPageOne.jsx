@@ -291,7 +291,7 @@ export function LandingPageOne() {
   return (
 
     <div className="w-full no-scrollbar">
-      <header className="sticky top-0 z-50 w-full border-b bg-white pb-4 ">
+      <header className="sticky top-0 z-50 w-full border-b bg-blue-100 pb-4 ">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-1 py-4">
           <div className="inline-flex items-center space-x-2 ">
             <span className="font-bold">StrayAidConnect</span>
@@ -396,12 +396,13 @@ export function LandingPageOne() {
         </div>
       </header>
       {/* Hero Section */}
-      <div className="relative w-full bg-white">
+      <div className="relative w-full bg-blue-200">
         <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
           <div className="flex flex-col justify-center px-4 py-12 md:py-16 lg:col-span-7 lg:gap-x-6 lg:px-6 lg:py-24 xl:col-span-6">
-            <div className="mt-8 flex max-w-max items-center space-x-2 rounded-full bg-gray-100 p-1">
-              <div className="rounded-full bg-white p-1 px-4">
-                <p className="text-sm font-medium">Let&apos; make a difference</p>
+            <div className="mt-8 flex max-w-max items-center space-x-2 rounded-full  p-1 bg-blue-500">
+              {/* bg-gray-100 */}
+              <div className="rounded-full bg-white p-1 px-4 ">
+                <p className="text-sm font-medium ">Let&apos; make a difference</p>
               </div>
 
 
