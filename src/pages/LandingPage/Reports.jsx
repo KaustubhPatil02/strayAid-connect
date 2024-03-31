@@ -1,6 +1,9 @@
 import {useState} from 'react'
 import '../firebase'
 import './LandingPageOne'
+import bg from "../../../public/undraw_team_up_re_84ok.svg"
+
+
 const LoadingSpinner = () => {
   return (
     <div className="flex items-center justify-center">
@@ -85,8 +88,15 @@ export function Reports() {
   
 
   return (
-    <section>
-      <header className="sticky top-0 z-30 w-full border-b bg-white pb-2 ">
+    <div className='min-h-screen bg-black' style={{ 
+      width: '100vw',
+      height: '80%',
+      backgroundImage: `url(${bg})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'  }}> 
+      <section>
+      {/* <header className="sticky top-0 z-30 w-full border-b bg-white pb-2 ">
         <div className="mx-auto flex max--7xl items-center justify-between px-4 py-2">
           <div className="inline-flex items-center space-x-2 ">
            <a href="/">
@@ -96,7 +106,7 @@ export function Reports() {
           </div>
 
         </div>
-      </header>
+      </header> */}
       <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
           <div className="mb-2 flex justify-center">
@@ -105,12 +115,12 @@ export function Reports() {
               <div className="px-2 md:px-12">
                 <p className="mt-4 text-lg text-gray-600">
                     
-            <p className="text-2xl font-bold text-gray-900 md:text-4xl justify-center flex"> Incident Reporting </p>
+            <p className="text-2xl font-bold text-gray-200 md:text-4xl justify-center flex"> Incident Reporting </p>
                 </p>
                 <form className="mt-8 space-y-4">
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700"
+                      className="text-sm font-medium leading-none text-gray-400"
                       htmlFor="first_name"
                     >
                       Your Name
@@ -129,7 +139,7 @@ export function Reports() {
                   
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700"
+                      className="text-sm font-medium leading-none text-gray-400"
                       htmlFor="email"
                     >
                       Email
@@ -147,7 +157,7 @@ export function Reports() {
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700"
+                      className="text-sm font-medium leading-none text-gray-400"
                       htmlFor="phone_number"
                     >
                       Phone number
@@ -165,7 +175,7 @@ export function Reports() {
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700"
+                      className="text-sm font-medium leading-none text-gray-400"
                       htmlFor="use_loc"
                     >
                       Location
@@ -183,7 +193,7 @@ export function Reports() {
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      className="text-sm font-medium leading-none text-gray-400 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                       htmlFor="message"
                     >
                       Reporting
@@ -206,7 +216,7 @@ export function Reports() {
                     ) : (
                       <button
                         type="button"
-                        className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black items-center justify-center"
+                        className="w-full rounded-md bg-white px-3 py-2 text-sm font-extrabold text-black font-semi shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black items-center justify-center"
                         onClick={submitData}
                       >
                         Report
@@ -224,7 +234,8 @@ export function Reports() {
           </div>
         </div>
     </section>
-  )
+
+    </div>  )
   
 }
 export default Reports;
