@@ -504,7 +504,7 @@ export function LandingPageOne() {
       </div>
       {/* FAQs */}
     <div className='bg-black text-white'>
-    <section className="mx-auto max-w-7xl bg-black px-2 py-10 md:px-0" id='faq '>
+    <section className="mx-auto max-w-7xl bg-black px-2 py-10 md:px-0" id='faq'>
         {/* ... */}
         <div className="mx-auto mt-8 max-w-3xl space-y-4 md:mt-16">
           {faqs.map((faq, index) => (
