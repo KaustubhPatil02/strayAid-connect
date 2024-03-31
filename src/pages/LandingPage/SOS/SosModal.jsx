@@ -72,7 +72,7 @@ export function SosModal() {
     //   <div className="text-center">
     //     <p className="text-base font-semibold text-black">SOS</p>
     //     <h1 className="mt-2 text-3xl font-bold tracking-tight text-black sm:text-5xl">
-    <div className="py-10  flex flex-col items-center justify-center bg-black  text-white">
+    <div className="py-10  flex flex-col items-center justify-center bg-black  text-white border-b border-t">
   <div className="text-center">
     <p className="font-semibold text-white text-4xl">SOS</p>
     <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-5xl">
