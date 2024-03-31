@@ -84,10 +84,11 @@ export function VolunteeringForm() {
   
 
   return (
-    <section>
-      <header className="sticky top-0 z-30 w-full border-b bg-white pb-2 ">
+  <div className='bg-black min-h-screen'>
+  <section className=''>
+      {/* <header className="sticky top-0 z-30 w-full border-b bg-white pb-2 ">
         <div className="mx-auto flex max--7xl items-center justify-between px-4 py-2">
-          <div className="inline-flex items-center space-x-2 ">
+          <div className="inline-flex items-center space-x-2  ">
            <a href="/">
            <span className="font-bold">Go Back </span>
            </a>
@@ -95,7 +96,7 @@ export function VolunteeringForm() {
           </div>
 
         </div>
-      </header>
+      </header> */}
       <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
      
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
@@ -205,7 +206,7 @@ export function VolunteeringForm() {
                     ) : (
                       <button
                         type="button"
-                        className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black items-center justify-center"
+                        className="w-full rounded-md bg-sky-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black items-center justify-center"
                         onClick={submitData}
                       >
                         Send Message
@@ -223,6 +224,7 @@ export function VolunteeringForm() {
           </div>
         </div>
     </section>
+  </div>
   )
   
 }

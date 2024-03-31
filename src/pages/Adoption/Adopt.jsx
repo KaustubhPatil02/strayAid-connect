@@ -46,6 +46,7 @@ export const Adopt = () => {
 
 
   return (
+    <div className='bg-black min-h-screen'>
     <section className="overflow-hidden">
       {/* <header className="sticky top-0 z-50 w-full border-b bg-white pb-4 ">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-1 py-4">
@@ -55,7 +56,7 @@ export const Adopt = () => {
         </div>
       </header> */}
 
-      <header className="sticky top-0 z-30 w-full border-b bg-white pb-2 ">
+      {/* <header className="sticky top-0 z-30 w-full border-b bg-white pb-2 ">
         <div className="mx-auto flex max--7xl items-center justify-between px-4 py-2">
           <div className="inline-flex items-center space-x-2 ">
             <a href="/">
@@ -66,11 +67,11 @@ export const Adopt = () => {
 
 
         </div>
-      </header>
+      </header> */}
 
       <div>
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
             🐾 #AdoptAStray
             {/* "Uniting hearts and paws through  */}
           </h2>
@@ -227,14 +228,14 @@ export const Adopt = () => {
       </div>
       <section className='flex flex-col gap-5'>
 
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center text-white">
           <span className='px-4 py-10'>NOTE: If you want to add any stray please go to home page and fill the 'report form' or fill the 'contact form'. We will definitly reach you out ASAP </span>
           <button className="flex items-center space-x-1 text-gray-600">
             {/* <ChevronDown className="h-4 w-4" /> */}
           </button>
         </div>
         <div className="flex items-center justify-center">
-          <button className="flex items-center space-x-1 text-gray-700 bg-gray-100 rounded-sm rounded-full">
+          <button className="flex items-center space-x-1 text-gray-400  rounded-sm rounded-full">
             <span>Load More</span>
             <ChevronDown className="h-4 w-4" />
           </button>
@@ -242,9 +243,10 @@ export const Adopt = () => {
       </section>
       <hr className="mt-6" />
       <footer className='px-4 py-10 sticky'>
-        <p className="text-xs font-semibold text-gray-900 md:text-base text-center ">© 2023-StrayAidConnect </p>
+        <p className="text-xs font-semibold text-gray-400 md:text-base text-center ">© 2023-StrayAidConnect </p>
 
       </footer>
     </section>
+    </div>
   )
 }

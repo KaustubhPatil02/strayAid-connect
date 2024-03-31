@@ -72,15 +72,15 @@ export function SosModal() {
     //   <div className="text-center">
     //     <p className="text-base font-semibold text-black">SOS</p>
     //     <h1 className="mt-2 text-3xl font-bold tracking-tight text-black sm:text-5xl">
-    <div className="py-10  flex flex-col items-center justify-center">
+    <div className="py-10  flex flex-col items-center justify-center bg-black  text-white">
   <div className="text-center">
-    <p className="text-base font-semibold text-black">SOS</p>
-    <h1 className="mt-2 text-3xl font-bold tracking-tight text-black sm:text-5xl">
+    <p className="font-semibold text-white text-4xl">SOS</p>
+    <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-5xl">
         Nearby Emergency Service
         </h1>
         <div className='mt-5'>
         {currentLocation ? (
-  <p>
+  <p className='text-blue-400'>
     Current Location: {currentLocation.latitude}, {currentLocation.longitude}
   </p>
 ) : (
@@ -92,7 +92,7 @@ export function SosModal() {
         
       </div>
       <div className="mt-8">
-  <h2 className="text-xl font-semibold text-black">Nearby Hospitals</h2>
+  <h2 className="text-xl font-semibold text-white">Nearby Hospitals</h2>
   {/* {currentLocation && (
     <p>
       Current Location: {currentLocation.latitude}, {currentLocation.longitude}
@@ -103,7 +103,7 @@ export function SosModal() {
       <li key={hospital.id}>{hospital.name}</li>
     ))}
   </ul> */}
-  <ul>
+  <ul className='text-yellow-500'>
   {nearbyHospitals.map((hospital) => (
     <li key={hospital.id}>
       {hospital.name}
@@ -122,7 +122,7 @@ export function SosModal() {
           <button
             type="button"
             onClick={handleClick}
-            className="inline-flex items-center rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            className="inline-flex items-center rounded-md border border-black px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
           >
             <ArrowLeft size={16} className="mr-2" />
             Go back

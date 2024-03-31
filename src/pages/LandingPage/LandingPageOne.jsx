@@ -289,29 +289,29 @@ export function LandingPageOne() {
   }
 
   return (
-
-    <div className="w-full no-scrollbar">
-      <header className="sticky top-0 z-50 w-full border-b bg-blue-100 pb-4 ">
+    <div className='bg-black'>
+          <div className="w-full no-scrollbar">
+      <header className="sticky top-0 z-50 w-full border-b bg-black text-white pb-4 ">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-1 py-4">
           <div className="inline-flex items-center space-x-2 ">
             <span className="font-bold">StrayAidConnect</span>
           </div>
           <div className="hidden lg:block">
-            <ul className="inline-flex space-x-16 ">
+            <ul className="inline-flex space-x-16  ">
             {menuItems.map((item) => (
                 <li key={item.name}>
                   {item.component ? (
                     <item.component
                       to={item.to}
                       // to="./VolunteeringForm"
-                      className="text-sm font-semibold text-gray-800 hover:text-gray-900"
+                      className="text-sm font-semibold text-white hover:text-gray-900"
                     >
                       {item.name}
                     </item.component>
                   ) : (
                     <a
                       href={item.href}
-                      className="text-sm font-semibold text-gray-800 hover:text-gray-900"
+                      className="text-sm font-semibold text-white hover:text-gray-900"
                     >
                       {item.name}
                     </a>
@@ -396,7 +396,7 @@ export function LandingPageOne() {
         </div>
       </header>
       {/* Hero Section */}
-      <div className="relative w-full bg-blue-200">
+      <div className="relative w-full bg-black">
         <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
           <div className="flex flex-col justify-center px-4 py-12 md:py-16 lg:col-span-7 lg:gap-x-6 lg:px-6 lg:py-24 xl:col-span-6">
             <div className="mt-8 flex max-w-max items-center space-x-2 rounded-full  p-1 bg-blue-500">
@@ -412,10 +412,10 @@ export function LandingPageOne() {
                 </p>
               </a>
             </div>
-            <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-6xl">
+            <h1 className="mt-8 text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-6xl">
               For People who care about strays
             </h1>
-            <p className="mt-8 text-lg text-gray-700"
+            <p className="mt-8 text-lg text-gray-300"
             // style={{backgroundImage: 'linear-gradient(to bottom, #9089FC)'}}
             >
               {/* A stray is a domestic animal, fowl, etc, that has wandered away and is lost. The dog was a stray which had been adopted. A stray dog or cat has wandered away from its owner&apos;s home. A stray dog came up to him. */}
@@ -428,7 +428,7 @@ export function LandingPageOne() {
             <form action="POST" className="mt-8 flex items-start space-x-2">
               <div>
                 <input
-                  className="flex w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="flex w-full rounded-md border border-white/90 bg-transparent px-3 py-2 text-sm placeholder:text-gray-350 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                   type="email"
                   placeholder="Enter your email"
                   id="email"
@@ -437,8 +437,8 @@ export function LandingPageOne() {
                   onChange={postShelterData}
                   style={{ color: 'black' }}
                 ></input>
-                <p className="mt-2 text-sm text-gray-500">Register your Animal Shelter Home, we will reach you out!</p>
-                <p className="mt-2 text-sm text-gray-500">We care about your privacy</p>
+                <p className="mt-2 text-sm text-gray-300">Register your Animal Shelter Home, we will reach you out!</p>
+                <p className="mt-2 text-sm text-gray-300">We care about your privacy</p>
               </div>
 
               <div>
@@ -447,10 +447,10 @@ export function LandingPageOne() {
                 ) : (
                   <button
                     type="button"
-                    className="rounded-md bg-black px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                    className="rounded-md bg-blue-500 px-3 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                     onClick={submitShelterMail}
                   >
-                    Register Us
+                    Register with Us
                   </button>
                 )}
                 {popupMessage && (
@@ -463,8 +463,8 @@ export function LandingPageOne() {
           </div>
           <div className="relative lg:col-span-5 lg:-mr-8 xl:col-span-6">
             <img
-              className="aspect-[3/2] bg-gray-50 object-cover lg:aspect-[4/3] lg:h-[700px] xl:aspect-[16/9]"
-              src="https://files.globalgiving.org/pfil/51176/ph_51176_220436.jpg?m=1658545061000"
+              className="aspect-[6/10] bg-gray-50 object-cover lg:aspect-[4/3] lg:h-[700px] xl:aspect-[16/9]"
+              src="https://www.amtmindia.org/wp-content/uploads/2022/06/Stray-animals-are-a-social-responsibility_Web.jpg"
               alt=""
             />
           </div>
@@ -472,8 +472,8 @@ export function LandingPageOne() {
       </div>
 
 
-      <div className="px-2 py-2 md:px-6 md:py-10 bg-slate-100">
-        <h1 className="text-4xl font-bold capitalize text-black lg:text-4xl items-center justify-center ">
+      <div className="px-2 py-2 md:px-6 md:py-10 bg-black">
+        <h1 className="text-4xl font-bold capitalize text-white lg:text-4xl items-center justify-center ">
           Features
         </h1>
         {/* <p className="my-2 text-gray-600">
@@ -484,7 +484,7 @@ export function LandingPageOne() {
           {Array.from({ length: 4 }).map((_, i) => (
             <div key={i} className="space-y-3">
 
-              <h1 className="text-xl font-semibold capitalize text-black">{headings[i]}</h1>
+              <h1 className="text-xl font-semibold capitalize text-white">{headings[i]}</h1>
               <p className="text-sm text-gray-500">
                 {descriptions[i]}
                 {headings[i] === 'Chatroom Fetching' ? 'Once the users are SignedIn in the system they can join the chatroom of their respective city by searching the chatroom of it.' : ''}
@@ -493,7 +493,7 @@ export function LandingPageOne() {
                 href="#"
                 className="-mx-1 inline-flex transform items-center text-sm font-semibold capitalize text-black transition-colors duration-300 hover:underline"
               >
-                {/* <span className="mx-1">read more</span> */}
+                {/* <span className="mx-1 text-white">read more</span> */}
                 <ArrowRight size={16} />
               </a>
             </div>
@@ -501,22 +501,23 @@ export function LandingPageOne() {
         </div>
       </div>
       {/* FAQs */}
-      <section className="mx-auto max-w-7xl bg-gray-50 px-2 py-10 md:px-0" id='faq'>
+    <div className='bg-black text-white'>
+    <section className="mx-auto max-w-7xl bg-black px-2 py-10 md:px-0" id='faq '>
         {/* ... */}
         <div className="mx-auto mt-8 max-w-3xl space-y-4 md:mt-16">
           {faqs.map((faq, index) => (
-            <div key={index} className="cursor-pointer rounded-md border border-gray-400 shadow-lg transition-all duration-200">
+            <div key={index} className="cursor-pointer rounded-md border text-white border-gray-400 shadow-lg transition-all duration-200">
               <button
                 type="button"
                 className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
               >
-                <span className="flex text-lg font-semibold text-black">{faq.question}</span>
+                <span className="flex text-lg font-semibold text-white">{faq.question}</span>
                 {openIndex === index ? <ChevronUp className="h-5 w-5 text-gray-500" /> : <ChevronDown className="h-5 w-5 text-gray-500" />}
               </button>
               {openIndex === index && (
                 <div className="px-4 pb-5 sm:px-6 sm:pb-6">
-                  <p className="text-gray-500">{faq.answer}</p>
+                  <p className="text-gray-400">{faq.answer}</p>
                 </div>
               )}
             </div>
@@ -525,9 +526,11 @@ export function LandingPageOne() {
 
         {/* ... */}
       </section>
+    </div>
       <SosModal />
 
-      <div className="mx-auto max-w-7xl px-4">
+     <div className='bg-black'>
+     <div className="mx-auto max-w-7xl px-4 ">
         {/* Hero Map */}
         <div className="flex flex-col space-y-8 pb-10 pt-12 md:pt-24">
           <div className="mx-auto max-w-max rounded-full border bg-gray-50 p-1 px-3">
@@ -535,28 +538,28 @@ export function LandingPageOne() {
               Share your thoughts
             </p>
           </div>
-          <p className="text-center text-3xl font-bold text-gray-900 md:text-5xl md:leading-10">
+          <p className="text-center text-3xl font-bold text-gray-400 md:text-5xl md:leading-10">
             Love to hear from you
           </p>
-          <p className="mx-auto max-w-4xl text-center text-base text-gray-600 md:text-xl">
+          {/* <p className="mx-auto max-w-4xl text-center text-base text-gray-600 md:text-xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore veritatis voluptates
             neque itaque repudiandae sint, explicabo assumenda quam ratione placeat?
-          </p>
+          </p> */}
         </div>
         <div className="mx-auto max-w-7xl py-12 md:py-24">
           <div className="grid items-center justify-items-center gap-x-4 gap-y-10 lg:grid-cols-2">
             {/* contact from */}
             <div className="flex items-center justify-center">
               <div className="px-2 md:px-12">
-                <p className="text-2xl font-bold text-gray-900 md:text-4xl" id='getintouch'>Get in touch</p>
-                <p className="mt-4 text-lg text-gray-600" >
+                <p className="text-2xl font-bold text-gray-300 md:text-4xl" id='getintouch'>Get in touch</p>
+                <p className="mt-4 text-lg text-gray-400" >
                   Our friendly team would love to hear from you.
                 </p>
                 <form id='form' method=" POST" action="" className="mt-8 space-y-4">
                   <div className="grid w-full gap-y-4 md:gap-x-4 lg:grid-cols-2">
                     <div className="grid w-full  items-center gap-1.5">
                       <label
-                        className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        className="text-sm font-medium leading-none text-gray-400 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                         htmlFor="first_name"
                       >
                         First Name
@@ -575,7 +578,7 @@ export function LandingPageOne() {
                     </div>
                     <div className="grid w-full  items-center gap-1.5">
                       <label
-                        className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        className="text-sm font-medium leading-none text-gray-400 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                         htmlFor="last_name"
                       >
                         Last Name
@@ -594,7 +597,7 @@ export function LandingPageOne() {
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      className="text-sm font-medium leading-none text-gray-400 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                       htmlFor="email"
                     >
                       Email
@@ -613,7 +616,7 @@ export function LandingPageOne() {
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      className="text-sm font-medium leading-none text-gray-400 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                       htmlFor="phone_number"
                     >
                       Phone number
@@ -632,7 +635,7 @@ export function LandingPageOne() {
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      className="text-sm font-medium leading-none text-gray-400 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                       htmlFor="message"
                     >
                       Message
@@ -655,7 +658,7 @@ export function LandingPageOne() {
                     ) : (
                       <button
                         type="button"
-                        className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black items-center justify-center"
+                        className="w-full rounded-md bg-sky-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black items-center justify-center"
                         onClick={submitContact}
                       >
                         Send Message
@@ -678,9 +681,10 @@ export function LandingPageOne() {
           </div>
         </div>
       </div>
+     </div>
       <hr className="mt-6" />
       <div className="w-auto p-8">
-        <div className="-m-1.5 flex flex-wrap">
+        {/* <div className="-m-1.5 flex flex-wrap">
           <div className="w-auto p-1.5">
             <a href="#">
               <div className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 hover:border-gray-400">
@@ -735,9 +739,10 @@ export function LandingPageOne() {
               </div>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
-      <p className="text-xs  text-gray-700 md:text-base text-center">© 2023-StrayAidConnect </p>
+      <p className="text-xs  text-gray-200 md:text-base text-center">© 2023-StrayAidConnect </p>
+    </div>
     </div>
 
 
