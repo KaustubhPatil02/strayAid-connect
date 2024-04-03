@@ -7,7 +7,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 // Mock data for hospitals
 // Updated data for hospitals
 const hospitals = [
-  { id: 1, name: 'Veterinary Polyclinic, Vasai. Asst Commissioner of Animal Husbandry Office', latitude: 19.359800890182438, longitude: 72.83842726619105 },
+  { id: 1, name: 'Veterinary Polyclinic, Vasai. Asst Commissioner of Animal Husbandry Office', latitude: 19.359800890182438, longitude: 72.83842726619105 ,emergencyNumber: '123-456-7890' },
   { id: 2, name: 'Supreme Pet Clinic And Care Centre', latitude: 19.36381075113499, longitude: 72.85592658579988 },
   { id: 3, name: 'The Progressive Pet Clinic', latitude: 19.366478301434064, longitude: 72.81264995566688 },
   { id: 4, name: 'Four Paws Pet/Vet Clinic Vasai-Virar-Naigaon', latitude: 19.366964145397844, longitude: 72.81488155362017 },
@@ -27,6 +27,12 @@ const hospitals = [
   { id: 16, name: 'Royal Pet Care Clinic', latitude: 19.268466655731345, longitude: 72.96297431935152 },
   { id: 17, name: 'Vet 4 Amazing Pets', latitude: 19.252989030118158, longitude: 72.97936963627578 },
   { id: 18, name: 'Petvets', latitude: 19.23748162333587, longitude: 72.97626160522637 },
+];
+const emergencyNumbers = [
+  { service: 'Fire Department', number: '123' },
+  { service: 'Police', number: '456' },
+  { service: 'Ambulance', number: '789' },
+  // Add more emergency numbers as needed
 ];
 
 // Determine if a hospital is nearby
@@ -88,71 +94,82 @@ export function SosModal() {
     //   <div className="text-center">
     //     <p className="text-base font-semibold text-black">SOS</p>
     //     <h1 className="mt-2 text-3xl font-bold tracking-tight text-black sm:text-5xl">
-    <div className="py-10  flex flex-col items-center justify-center bg-black  text-white border-b border-t min-h-screen">
-  <div className="text-center">
-    <p className="font-semibold text-white text-4xl">SOS</p>
-    <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-5xl">
-        Nearby Emergency Service
+    <div className="py-10  flex flex-col items-center justify-center bg-black  text-white border-b border-t h-screen ">
+      <div className="text-center">
+        <p className="font-semibold text-white text-4xl">SOS</p>
+        <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-5xl">
+          Nearby Emergency Service
         </h1>
         <div className='mt-5'>
-        {currentLocation ? (
-  <p className='text-blue-400'>
-    Current Location: {currentLocation.latitude}, {currentLocation.longitude}
-  </p>
-) : (
-  <p className="mt-4 text-base leading-7 text-gray-600">
-    Sorry, we couldn't find your current location. Please turn on your location services and try again. 
-  </p>
-  )}
+          {currentLocation ? (
+            <p className='text-blue-400'>
+              Current Location: {currentLocation.latitude}, {currentLocation.longitude}
+            </p>
+          ) : (
+            <p className="mt-4 text-base leading-7 text-gray-600">
+              Sorry, we couldn't find your current location. Please turn on your location services and try again.
+            </p>
+          )}
         </div>
-        
+
       </div>
       <div className="mt-8">
-  <h2 className="text-xl font-semibold text-white">Nearby Hospitals</h2>
-  {/* {currentLocation && (
+        <h2 className="text-xl font-semibold text-white">Nearby Hospitals</h2>
+        {/* {currentLocation && (
     <p>
       Current Location: {currentLocation.latitude}, {currentLocation.longitude}
     </p>
   )} */}
-  {/* <ul>
+        {/* <ul>
     {nearbyHospitals.map((hospital) => (
       <li key={hospital.id}>{hospital.name}</li>
     ))}
   </ul> */}
-  <ul className='text-yellow-500'>
-  {nearbyHospitals.map((hospital) => (
-    <li key={hospital.id}>
-      {hospital.name}
-      <a 
-        href={`https://www.google.com/maps/search/?api=1&query=${hospital.latitude},${hospital.longitude}`} 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        View on Google Maps
-      </a>
-    </li>
-  ))}
-</ul>
+        <ul className='text-yellow-500 ml-5 mr-5'>
+          {nearbyHospitals.map((hospital, index) => (
+            <li key={hospital.id}>
+              {index + 1}. {hospital.name}
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${hospital.latitude},${hospital.longitude}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on Google Maps
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="mt-8">
+  <h2 className="text-xl font-semibold text-white">Emergency Numbers</h2>
+  <ul className='text-yellow-500 ml-5 mr-5'>
+    {emergencyNumbers.map((item, index) => (
+      <li key={index}>
+        {item.service}: {item.number}
+      </li>
+    ))}
+  </ul>
 </div>
-<div className="mt-4 flex items-center justify-center gap-x-3">
-          <button
-            type="button"
-            onClick={handleClick}
-            className="inline-flex items-center rounded-md border border-black px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-          >
-            <ArrowLeft size={16} className="mr-2" />
-            Go back
-          </button>
-          <button
-            type="button"
-            className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-          >
-            Contact us
-          </button>
-        </div>
+      
+      <div className="mt-4 flex items-center justify-center gap-x-3">
+        <button
+          type="button"
+          onClick={handleClick}
+          className="inline-flex items-center rounded-md border border-black px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+        >
+          <ArrowLeft size={16} className="mr-2" />
+          Go back
+        </button>
+        <button
+          type="button"
+          className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+        >
+          Contact us
+        </button>
+      </div>
     </div>
-    
-    );
+
+  );
 }
 //  import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 // import { ArrowLeft } from 'lucide-react';
@@ -267,7 +284,7 @@ export function SosModal() {
 //             </div>
 //         </div>
 //     );
-// } 
+// }
 
 
 //  modal

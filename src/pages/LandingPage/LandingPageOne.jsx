@@ -350,7 +350,7 @@ export function LandingPageOne() {
                         <div className="bg-black bg-opacity-50 absolute inset-0 z-10"></div>
                         <div className="bg-black p-6 rounded-lg w-80 lg:w-1/2 z-20">
                           <SosModal />
-                          <button onClick={handleCloseModal} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Close</button>
+                          <button onClick={handleCloseModal} className="mb-20 px-4 py-2 bg-blue-500 text-white rounded">Close</button>
                         </div>
                       </div>
                     )}
