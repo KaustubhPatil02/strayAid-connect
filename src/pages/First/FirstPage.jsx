@@ -9,8 +9,8 @@ const FirstPage = () => {
         <img
           className='object-cover w-full h-full'
           src="/First.jpg" alt="" />
-        <div className='absolute top-0 right-0 text-white text-6xl lg:text-4xl sm:text-2xl pr-10 mt-60 gap-[2rem]'>
-          <h1 className='mb-4 text-6xl'>
+        <div className='absolute top-0 right-0 text-gray-400 text-6xl lg:text-4xl sm:text-2xl pr-10 mt-60 gap-[2rem]'>
+          <h1 className='mb-4 text-6xl font-semibold'>
             <TypewriterEffect text="They Need Your Help!" />
           </h1>
           <div>

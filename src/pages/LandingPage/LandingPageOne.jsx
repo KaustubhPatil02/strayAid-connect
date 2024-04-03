@@ -1,7 +1,7 @@
 'use client'
 // import { Route } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ChevronDown, ChevronUp,
   // Link, 
@@ -289,10 +289,25 @@ export function LandingPageOne() {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const [showFirstPage, setShowFirstPage] = useState(true);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setShowFirstPage(false);
+      window.scrollTo({ behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+    
+  }, []);
+
   return (
     <>
     <div>
-      <FirstPage />
+    {showFirstPage && <FirstPage />}
     </div>
     <div className='bg-black'>
         <div className="w-full no-scrollbar">

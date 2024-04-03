@@ -1,7 +1,6 @@
 import {useState} from 'react'
 import '../firebase'
 import './LandingPageOne'
-import bg from "../../../public/undraw_team_up_re_84ok.svg"
 
 
 const LoadingSpinner = () => {
@@ -91,7 +90,7 @@ export function Reports() {
     <div className='min-h-screen bg-black' style={{ 
       width: '100vw',
       height: '80%',
-      backgroundImage: `url(${bg})`,
+      // backgroundImage: `url(${bg})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center'  }}> 
