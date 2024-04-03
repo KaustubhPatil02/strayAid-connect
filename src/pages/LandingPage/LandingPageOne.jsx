@@ -290,9 +290,11 @@ export function LandingPageOne() {
   }
 
   return (
-    <><div>
+    <>
+    <div>
       <FirstPage />
-    </div><div className='bg-black'>
+    </div>
+    <div className='bg-black'>
         <div className="w-full no-scrollbar">
           <header className="sticky top-0 z-50 w-full border-b bg-black text-white pb-0 ">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-1 py-4">
