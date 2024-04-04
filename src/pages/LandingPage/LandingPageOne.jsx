@@ -12,7 +12,8 @@ import { Link } from "react-router-dom";
 import { GoAlertFill } from "react-icons/go";
 import { SosModal } from './SOS/SosModal';
 import FirstPage from '../First/FirstPage';
-
+import TypewriterEffect from '../../pages/First/TypewriterEffect';
+import TypewriterEffect2 from '../../pages/First/TypewriterEffect2';
 const menuItems = [
   // {
   //   name: 'Home',
@@ -301,15 +302,15 @@ export function LandingPageOne() {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-    
+
   }, []);
 
   return (
     <>
-    <div>
-     <FirstPage />
-    </div>
-    <div className='bg-black'>
+      <div>
+
+      </div>
+      <div className='bg-black'>
         <div className="w-full no-scrollbar">
           <header className="sticky top-0 z-50 w-full border-b bg-black text-white pb-0 ">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-1 py-4">
@@ -414,6 +415,26 @@ export function LandingPageOne() {
               )}
             </div>
           </header>
+          {/* issue section */}
+          <div className='flex flex-col'>
+  <div className='relative h-screen sm:h-auto sm:flex sm:items-center'>
+    <img
+      className='object-cover w-full h-full'
+      src="/First.jpg" alt="" />
+    <div className='absolute top-0 right-0 text-right text-white text-6xl lg:text-4xl  sm:text-2xl pr-10 mt-60 gap-[2rem]'>
+      <h1 className='mb-4 text-8xl font-semibold'>
+        They Need Your <br /> 
+           Help!
+      </h1>
+      <div>
+        <p className='text-4xl lg:text-6xl sm:text-xl'>
+          You can save them!!!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
           {/* Hero Section */}
           <div className="relative w-full bg-black">
             <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
