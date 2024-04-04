@@ -307,7 +307,7 @@ export function LandingPageOne() {
   return (
     <>
     <div>
-    {showFirstPage && <FirstPage />}
+     <FirstPage />
     </div>
     <div className='bg-black'>
         <div className="w-full no-scrollbar">
