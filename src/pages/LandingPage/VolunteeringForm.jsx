@@ -106,12 +106,12 @@ export function VolunteeringForm() {
               <div className="px-2 md:px-12">
                 <p className="mt-4 text-lg text-gray-600">
                     
-            <p className="text-2xl font-bold text-gray-900 md:text-4xl justify-center flex"> Volunteers Info. </p>
+            <p className="text-2xl font-bold text-gray-200 md:text-4xl justify-center flex"> Volunteers Info. </p>
                 </p>
                 <form className="mt-8 space-y-4">
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700"
+                      className="text-sm font-medium leading-none text-gray-500"
                       htmlFor="first_name"
                     >
                       First Name
@@ -129,7 +129,7 @@ export function VolunteeringForm() {
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700"
+                      className="text-sm font-medium leading-none text-gray-500"
                       htmlFor="last_name"
                     >
                       Last Name
@@ -148,7 +148,7 @@ export function VolunteeringForm() {
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700"
+                      className="text-sm font-medium leading-none text-gray-500"
                       htmlFor="email"
                     >
                       Email
@@ -166,7 +166,7 @@ export function VolunteeringForm() {
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700"
+                      className="text-sm font-medium leading-none text-gray-500"
                       htmlFor="phone_number"
                     >
                       Phone number
@@ -184,7 +184,7 @@ export function VolunteeringForm() {
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
                     <label
-                      className="text-sm font-medium leading-none text-gray-700"
+                      className="text-sm font-medium leading-none text-gray-500"
                       htmlFor="use_loc"
                     >
                       Location
