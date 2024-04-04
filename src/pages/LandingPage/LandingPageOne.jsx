@@ -505,7 +505,7 @@ export function LandingPageOne() {
               <div className="relative lg:col-span-5 lg:-mr-8 xl:col-span-6">
                 <img
                   className="aspect-[6/10] bg-gray-50 object-cover lg:aspect-[4/3] lg:h-[700px] xl:aspect-[16/9]"
-                  src="https://www.amtmindia.org/wp-content/uploads/2022/06/Stray-animals-are-a-social-responsibility_Web.jpg"
+                  src="https://www.globalgiving.org/pfil/51176/ph_51176_220440.jpg"
                   alt="" />
               </div>
             </div>
