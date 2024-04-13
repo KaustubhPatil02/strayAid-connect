@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-// import '../App.css'
+// import '../../App.css'
 const PaymentForm = ({ onPaymentSuccess }) => {
   const stripe = useStripe();
   const elements = useElements();
@@ -44,8 +44,13 @@ const PaymentForm = ({ onPaymentSuccess }) => {
           required
         />
       </label>
-      <CardElement />
-      <button className="donation-button" type="submit">Donate Now</button>
+      <div className="flex justify-center items-center ">
+  <div className="w-1/2">
+    <CardElement className='border-b border-gray-700' />
+  </div>
+</div>
+      {/* <CardElement className='border-b border-gray-700' /> */}
+      <button className="donation-button rounded-full bg-black text-white mt-5 " type="submit">Donate Now</button>
     </form>
   );
 };

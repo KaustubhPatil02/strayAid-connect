@@ -90,7 +90,7 @@ const MainDonation = () => {
           </div>
         ))}
         <Progress current={donationProgress} target={targetAmount} />
-        <QuickDonationButtons onQuickDonate={handleDonation} />
+        {/* <QuickDonationButtons onQuickDonate={handleDonation} /> */}
         <Elements stripe={stripePromise}>
           <PaymentForm onPaymentSuccess={() => console.log('Payment success!')} />
         </Elements>
@@ -98,11 +98,11 @@ const MainDonation = () => {
         {/* <DonationForm onDonate={handleDonation} /> */}
 
         {/* <AdminPage /> */}
-        <DonationPage />
+        {/* <DonationPage />
         <h2>Accident Details</h2>
 
         <AccidentForm />
-        {isAdmin && <button onClick={handleResetLimit}>Reset Donation Limit (Admin Only)</button>}
+        {isAdmin && <button onClick={handleResetLimit}>Reset Donation Limit (Admin Only)</button>} */}
 
       </div>
       <hr className="mt-6" />

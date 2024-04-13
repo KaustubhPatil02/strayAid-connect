@@ -13,14 +13,18 @@ import { List6 } from "./pages/Adoption/AdoptList/List6";
 import { List7 } from "./pages/Adoption/AdoptList/List7";
 import { List8 } from "./pages/Adoption/AdoptList/List8";
 import { SosModal } from "./pages/LandingPage/SOS/SosModal";
+import AdminPage from "./pages/Donation/AdminPage";
+import { SignIn } from "./pages/othercomponents/SignIn";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPageOne />} index />
+        <Route path="/login" element={<SignIn />} />
         <Route path="/VolunteeringForm" element={<VolunteeringForm />} />
         <Route path="/Reports" element={<Reports />} />
+        <Route path="/Admin" element={<AdminPage />} />
         <Route path="/sos" element={<SosModal />} />
         <Route path="/Adopt" element={<Adopt />}>
           <Route path="List1" element={<List1 />} />
