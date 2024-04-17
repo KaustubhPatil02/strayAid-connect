@@ -86,7 +86,7 @@ const MainDonation = () => {
         {accidents.map((accident, index) => (
           <div className="image-container" key={index}>
             <p style={{ marginLeft: '10px' }}>{accident.details}</p>
-            <img src={accident.imageUrl} alt={`Accident ${index}`} style={{ maxWidth: '300px' }} />
+            <img src={accident.imageUrl} style={{ maxWidth: '300px' }} />
           </div>
         ))}
         <Progress current={donationProgress} target={targetAmount} />
@@ -101,8 +101,8 @@ const MainDonation = () => {
         <DonationPage />
         <h2>Accident Details</h2>
 
-        <AccidentForm />
-        {isAdmin && <button onClick={handleResetLimit}>Reset Donation Limit (Admin Only)</button>}
+        {/* <AccidentForm /> */}
+        {/* {isAdmin && <button onClick={handleResetLimit}>Reset Donation Limit (Admin Only)</button>} */}
 
       </div>
       <hr className="mt-6" />

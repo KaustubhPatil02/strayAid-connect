@@ -23,9 +23,9 @@ const DonationPage = () => {
 
   return (
     <div>
-      <h2>Donation Page</h2>
-      <p>Donation Progress: ${donationProgress}</p>
-      <p>Donation Limit: ${donationLimit}</p>
+      {/* <h2>Donation Page</h2> */}
+      {/* <p>Donation Progress: {donationProgress}</p> */}
+      {/* <p>Donation Limit: ${donationLimit}</p> */}
       {/* Your donation components and logic here */}
     </div>
   );

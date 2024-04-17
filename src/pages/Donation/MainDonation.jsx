@@ -83,12 +83,18 @@ const MainDonation = () => {
         <center>
           <h1>Donation</h1>
         </center>
-        {accidents.map((accident, index) => (
-          <div className="image-container" key={index}>
-            <p style={{ marginLeft: '10px' }}>{accident.details}</p>
-            <img src={accident.imageUrl} alt={`Accident ${index}`} style={{ maxWidth: '300px' }} />
-          </div>
-        ))}
+        <div className="flex flex-col items-center justify-center pl-[15rem]">
+  {accidents.map((accident, index) => (
+    <div className="flex flex-col items-center justify-center grid grid-row-2 md:grid-cols-3 gap-4" key={index}>
+      <p className='text-center'>{accident.details}</p>
+      {accident.imageUrl && 
+        <img src={accident.imageUrl}
+          className='grid grid-cols-2 md:grid-cols-3 gap-3 p-4 max-w-[500px] md:max-w-[500px] place-items-center' 
+        />
+      }
+    </div>
+  ))}
+</div>
         <Progress current={donationProgress} target={targetAmount} />
         {/* <QuickDonationButtons onQuickDonate={handleDonation} /> */}
         <Elements stripe={stripePromise}>

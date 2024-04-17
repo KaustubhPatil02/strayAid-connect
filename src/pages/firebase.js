@@ -16,6 +16,18 @@ const firebaseConfig = {
     measurementId: "G-PXTZVW7CEF"
 };
 
+// const firebaseConfig = {
+//     apiKey: "AIzaSyDXeOEw72MjOZf3HJscyKruOOvjcjxhqw4",
+//     authDomain: "strayaidconnect-donation.firebaseapp.com",
+//     databaseURL: "https://location-62d55-default-rtdb.firebaseio.com",
+
+//     // databaseURL: "https://strayaidconnect-donation-default-rtdb.asia-southeast1.firebasedatabase.app",
+//     projectId: "strayaidconnect-donation",
+//     storageBucket: "strayaidconnect-donation.appspot.com",
+//     messagingSenderId: "483834303519",
+//     appId: "1:483834303519:web:921b002b163170f6be312a",
+//     measurementId: "G-21VB2HV3JQ"
+//   };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 

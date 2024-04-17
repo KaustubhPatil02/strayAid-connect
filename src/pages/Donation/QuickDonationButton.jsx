@@ -13,16 +13,16 @@ const QuickDonationButtons = ({ onQuickDonate }) => {
         onClick={() => onQuickDonate(10)}
         className="rounded-full bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
       >
-        Donate $10
+        Update the progress 
       </button>
-      <button
+      {/* <button
         type="button"
         // onClick={onQuickDonate(10)}
         onClick={() => onQuickDonate(20)}
         className="rounded-full bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
       >
         Donate $20
-      </button>
+      </button> */}
       {/* <button className="donation-button" onClick={() => onQuickDonate(10)}>Donate $10</button>
       <button className="donation-button" onClick={() => onQuickDonate(20)}>Donate $20</button> */}
       
