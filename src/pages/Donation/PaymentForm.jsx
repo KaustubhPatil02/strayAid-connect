@@ -50,7 +50,11 @@ const PaymentForm = ({ onPaymentSuccess }) => {
   </div>
 </div>
       {/* <CardElement className='border-b border-gray-700' /> */}
-      <button className="donation-button rounded-full bg-black text-white mt-5 " type="submit">Donate Now</button>
+      {/* <button className="donation-button rounded-full bg-black text-white mt-5 " type="submit">Donate Now</button> */}
+      {/* <button className="donation-button rounded-full bg-black text-white mt-5 " type="submit">Donate Now</button> */}
+      <button type="submit" className="bg-black mt-6 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+            Donate now
+          </button>
     </form>
   );
 };

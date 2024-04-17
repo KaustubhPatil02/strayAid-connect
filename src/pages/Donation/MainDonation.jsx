@@ -81,7 +81,7 @@ const MainDonation = () => {
       </header>
       <div>
         <center>
-          <h1>Donation</h1>
+          <h1 className='text-4xl font-semibold'>Donation</h1>
         </center>
         <div className="flex flex-col items-center justify-center pl-[15rem]">
   {accidents.map((accident, index) => (
