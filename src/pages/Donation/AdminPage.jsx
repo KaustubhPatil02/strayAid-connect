@@ -11,7 +11,6 @@ const AdminPage = () => {
   const isAdmin = useSelector((state) => state.isAdmin);
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     const isAdmin = localStorage.getItem('isAdmin');
     if (!isAdmin) {
@@ -19,6 +18,12 @@ const AdminPage = () => {
     }
   }, [navigate]);
 
+  const handleLogout = () => {
+    if (window.confirm('Are you sure you want to logout?')) {
+      localStorage.removeItem('isAdmin');
+      navigate('/login');
+    }
+  };
 
   const handleResetLimit = () => {
     if (isAdmin) {
@@ -49,6 +54,9 @@ const AdminPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 w-full">
+      <div className="pr-10 pb-10">
+      <button className="self-end px-4 py-2 mt-4 bg-red-500 text-white rounded hover:bg-red-700" onClick={handleLogout}>Logout</button>
+      </div>
       <DonationPage />
       <h2 className="text-2xl font-bold mb-4">Accident Details</h2>
       <AccidentForm />
