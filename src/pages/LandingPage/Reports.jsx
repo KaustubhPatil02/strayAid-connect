@@ -132,7 +132,7 @@ export function Reports() {
                       name='firstName'
                       value= {volunteersData.firstName}
                       onChange={postVolunteersData}
-                      style={{ color: 'black' }}
+                      style={{ color: 'white' }}
                     />
                   </div>
                   
@@ -151,7 +151,7 @@ export function Reports() {
                       name='email'
                       value={volunteersData.email}
                       onChange={postVolunteersData}
-                      style={{ color: 'black' }}
+                      style={{ color: 'white' }}
                     />
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
@@ -169,7 +169,7 @@ export function Reports() {
                       name='phoneNum'
                       value={volunteersData.phoneNum}
                       onChange={postVolunteersData}
-                      style={{ color: 'black' }}
+                      style={{ color: 'white' }}
                     />
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
@@ -187,7 +187,7 @@ export function Reports() {
                       name='loc'
                       value={volunteersData.loc}
                       onChange={postVolunteersData}
-                      style={{ color: 'black' }}
+                      style={{ color: 'white' }}
                     />
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
@@ -205,7 +205,7 @@ export function Reports() {
                       name='msg'
                       value={volunteersData.msg}
                       onChange={postVolunteersData}
-                      style={{ color: 'black' }}
+                      style={{ color: 'white' }}
 
                     />
                   </div>

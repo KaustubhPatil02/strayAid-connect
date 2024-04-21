@@ -124,7 +124,7 @@ export function VolunteeringForm() {
                       name='firstName'
                       value= {volunteersData.firstName}
                       onChange={postVolunteersData}
-                      style={{ color: 'black' }}
+                      style={{ color: 'white' }}
                     />
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
@@ -142,7 +142,7 @@ export function VolunteeringForm() {
                       name='lastName'
                       value={volunteersData.lastName}
                       onChange={postVolunteersData}
-                      style={{ color: 'black' }}
+                      style={{ color: 'white' }}
                       
                     />
                   </div>
@@ -161,7 +161,7 @@ export function VolunteeringForm() {
                       name='email'
                       value={volunteersData.email}
                       onChange={postVolunteersData}
-                      style={{ color: 'black' }}
+                      style={{ color: 'white' }}
                     />
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
@@ -179,7 +179,7 @@ export function VolunteeringForm() {
                       name='phoneNum'
                       value={volunteersData.phoneNum}
                       onChange={postVolunteersData}
-                      style={{ color: 'black' }}
+                      style={{ color: 'white' }}
                     />
                   </div>
                   <div className="grid w-full  items-center gap-1.5">
@@ -197,7 +197,7 @@ export function VolunteeringForm() {
                       name='loc'
                       value={volunteersData.loc}
                       onChange={postVolunteersData}
-                      style={{ color: 'black' }}
+                      style={{ color: 'white' }}
                     />
                   </div>
                   <div>

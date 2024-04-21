@@ -591,7 +591,7 @@ export function LandingPageOne() {
                   {/* contact from */}
                   <div className="flex items-center justify-center">
                     <div className="px-2 md:px-12">
-                      <p className="text-2xl font-bold text-gray-300 md:text-4xl" id='getintouch'>Get in touch</p>
+                      <p className="text-2xl font-bold text-white md:text-4xl" id='getintouch'>Get in touch</p>
                       <p className="mt-4 text-lg text-gray-400">
                         Our friendly team would love to hear from you.
                       </p>
@@ -612,7 +612,7 @@ export function LandingPageOne() {
                               name='firstName'
                               value={contactData.firstName}
                               onChange={postContactForm}
-                              style={{ color: 'black' }} />
+                              style={{ color: 'white' }} />
                           </div>
                           <div className="grid w-full  items-center gap-1.5">
                             <label
@@ -629,7 +629,7 @@ export function LandingPageOne() {
                               name='lastName'
                               value={contactData.lastName}
                               onChange={postContactForm}
-                              style={{ color: 'black' }} />
+                              style={{ color: 'white' }} />
                           </div>
                         </div>
                         <div className="grid w-full  items-center gap-1.5">
@@ -647,7 +647,7 @@ export function LandingPageOne() {
                             name='email'
                             value={contactData.email}
                             onChange={postContactForm}
-                            style={{ color: 'black' }} />
+                            style={{ color: 'white' }} />
                         </div>
                         <div className="grid w-full  items-center gap-1.5">
                           <label
@@ -664,7 +664,7 @@ export function LandingPageOne() {
                             name='phoneNum'
                             value={contactData.phoneNum}
                             onChange={postContactForm}
-                            style={{ color: 'black' }} />
+                            style={{ color: 'white' }} />
                         </div>
                         <div className="grid w-full  items-center gap-1.5">
                           <label
@@ -681,7 +681,7 @@ export function LandingPageOne() {
                             name='msg'
                             value={contactData.msg}
                             onChange={postContactForm}
-                            style={{ color: 'black' }} />
+                            style={{ color: 'white' }} />
                         </div>
                         <div>
                           {isLoading ? (
@@ -771,7 +771,7 @@ export function LandingPageOne() {
       </div>
     </div> */}
           </div>
-          <p className="text-xs  text-gray-200 md:text-base text-center">© 2023-StrayAidConnect </p>
+          <p className="text-xs  text-gray-200 md:text-base text-center">© 2024-StrayAidConnect </p>
         </div>
       </div></>
 
