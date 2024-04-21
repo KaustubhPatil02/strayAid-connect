@@ -64,7 +64,8 @@ const AdminPage = () => {
   Volunteers Data
 </Link>
 </div>
-      <DonationPage />
+
+      {/* <DonationPage /> */}
       <h2 className="text-2xl font-bold mb-4">Accident Details</h2>
       <AccidentForm />
       {isAdmin && <button className="px-4 py-2 mt-4 bg-blue-500 text-white rounded hover:bg-blue-700" onClick={handleResetLimit}>Reset Donation Limit (Admin Only)</button>}

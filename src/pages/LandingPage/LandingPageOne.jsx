@@ -325,14 +325,14 @@ export function LandingPageOne() {
                         <item.component
                           to={item.to}
                           // to="./VolunteeringForm"
-                          className="text-sm font-semibold text-white hover:text-gray-900"
+                          className="text-sm font-semibold text-white hover:text-gray-200"
                         >
                           {item.name}
                         </item.component>
                       ) : (
                         <a
                           href={item.href}
-                          className="text-sm font-semibold text-white hover:text-gray-900"
+                          className="text-sm font-semibold text-white hover:text-gray-200"
                         >
                           {item.name}
                         </a>

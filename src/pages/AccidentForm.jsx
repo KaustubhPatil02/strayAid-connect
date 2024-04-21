@@ -84,14 +84,18 @@ const AccidentForm = () => {
     <>
       <ToastContainer />
       <form onSubmit={handleSubmit}>
-      <label className="mb-4">
-  Accident Details:
-  <input type='text' className='border-black outline-none border-b w-[10rem]' ref={accidentDetailsRef} />
-</label>
-<label className="mb-4">
-  Required Donation:
-  <input type='text' className='border-black outline-none border-b w-[10rem]' ref={donationmoney} />
-</label>
+      <div className="mb-4">
+  <label>
+    Accident Details:
+    <input type='text' className='border-black outline-none border-b w-[10rem]' ref={accidentDetailsRef} />
+  </label>
+</div>
+<div className="mb-4">
+  <label>
+    Required Donation:
+    <input type='text' className='border-black outline-none border-b w-[10rem]' ref={donationmoney} />
+  </label>
+</div>
 
         <br />
         <br />
