@@ -14,6 +14,7 @@ import DonationPage from '../Donation/DonationPage';
 import { resetDonationProgress, setAdminStatus } from '../../pages/actions';
 import AccidentForm from '../../pages/AccidentForm'
 import './Donation.css'
+import AdminPage from './AdminPage';
 
 
 const stripePromise = loadStripe('pk_test_51OqBBySAiODbXNxVcI1DDQEMzE9s3nSaVB5y53qsPL8O9zwiii9ygmHJqSW8yfSh5aQ27oly2Hy5A8f5bWgYNoxL009intw30n');
@@ -83,20 +84,23 @@ const MainDonation = () => {
         <center>
           <h1 className='text-4xl font-semibold'>Donation</h1>
         </center>
-        <div className="flex flex-col items-center justify-center pl-[15rem]">
-  {accidents.map((accident, index) => (
-    <div className="flex flex-col items-center justify-center grid grid-row-2 md:grid-cols-3 gap-4" key={index}>
-      <p className='text-center'>{accident.details}</p>
-      {accident.imageUrl && 
-        <img src={accident.imageUrl}
-          className='grid grid-cols-2 md:grid-cols-3 gap-3 p-4 max-w-[500px] md:max-w-[500px] place-items-center' 
-        />
-      }
-    </div>
-  ))}
-</div>
+        <div className="flex flex-col items-center justify-center pl-4 md:pl-[15rem]">
+          {accidents.map((accident, index) => (
+            <div className=" flex-col items-center justify-center grid grid-cols-1 md:grid-cols-3 gap-4" key={index}>
+              <p className='text-center'>{accident.details}</p>
+              <p className='text-center'>₹{accident.donationdetails} required for treatmnet</p>
+              {accident.imageUrl &&
+                <img src={accident.imageUrl}
+                  className='grid grid-cols-1 md:grid-cols-3 gap-3 p-4 max-w-full md:max-w-[500px] place-items-center'
+                />
+              }
+            </div>
+          ))}
+        </div>
         <Progress current={donationProgress} target={targetAmount} />
         {/* <QuickDonationButtons onQuickDonate={handleDonation} /> */}
+        <hr className="mt-6" />
+
         <Elements stripe={stripePromise}>
           <PaymentForm onPaymentSuccess={() => console.log('Payment success!')} />
         </Elements>
@@ -111,10 +115,15 @@ const MainDonation = () => {
         {isAdmin && <button onClick={handleResetLimit}>Reset Donation Limit (Admin Only)</button>} */}
 
       </div>
-      <hr className="mt-6" />
+
+      <div className="flex flex-col justify-center items-center my-4">
+        <span className='text-2xl'>or</span>
+        <img src="../../../public/qr.jpg" alt="description" className="mx-2 mt-2  w-60 h-90" />
+      </div>
+      <hr className="mt-10" />
+
       <footer className='px-4 py-10 sticky'>
         <p className="text-xs font-semibold text-gray-900 md:text-base text-center ">© 2023-StrayAidConnect </p>
-
       </footer>
     </section>
   );

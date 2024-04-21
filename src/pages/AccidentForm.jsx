@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const AccidentForm = () => {
   const [uploadedImages, setUploadedImages] = useState([]);
   const accidentDetailsRef = useRef();
+  const donationmoney = useRef();
   const imageRef = useRef();
 
   useEffect(() => {
@@ -43,6 +44,7 @@ const AccidentForm = () => {
 
       database.ref('accidents').push({
         details: accidentDetailsRef.current.value,
+        donationdetails: donationmoney.current.value,
         imageUrl: imageUrl,
       });
 
@@ -82,10 +84,14 @@ const AccidentForm = () => {
     <>
       <ToastContainer />
       <form onSubmit={handleSubmit}>
-        <label>
-          Accident Details:
-          <input type='text' className='border-black outline-none border-b w-[10rem]' ref={accidentDetailsRef} />
-        </label>
+      <label className="mb-4">
+  Accident Details:
+  <input type='text' className='border-black outline-none border-b w-[10rem]' ref={accidentDetailsRef} />
+</label>
+<label className="mb-4">
+  Required Donation:
+  <input type='text' className='border-black outline-none border-b w-[10rem]' ref={donationmoney} />
+</label>
 
         <br />
         <br />
@@ -129,7 +135,7 @@ const AccidentForm = () => {
                   <tbody className="divide-y divide-gray-200 bg-white">
 
                     {uploadedImages.map((image, index) => (
-                              console.log(image, index),
+                              // console.log(image, index),
                       
                       <tr key={index}>
                         <td className="whitespace-nowrap px-4 py-4">

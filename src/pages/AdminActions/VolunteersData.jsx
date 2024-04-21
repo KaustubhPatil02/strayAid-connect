@@ -1,7 +1,7 @@
 // Actions.js
-import React, { useEffect, useState } from 'react';
-import { get, ref } from 'firebase/database';
-import {database} from '../../firebase/firebase'; // Import db from firebase.js
+import { useEffect, useState } from 'react';
+// import { get, ref } from 'firebase/database';
+// import {database} from '../../firebase/firebase'; // Import db from firebase.js
 
 export function VolunteersData() {
     const [peopleData, setPeopleData] = useState([]);
