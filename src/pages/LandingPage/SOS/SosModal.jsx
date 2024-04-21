@@ -8,7 +8,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 // Updated data for hospitals
 const hospitals = [
   { id: 1, name: 'Veterinary Polyclinic, Vasai. Asst Commissioner of Animal Husbandry Office', mapsLink:"bhttps://www.google.com/maps/place/Animal+Heart+Veterinary+Clinic,+Spa+and+Pet+Store/@19.4104478,72.8240671,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7a90fdaef4e61:0xa28b3cd6827e14ad!8m2!3d19.4104428!4d72.826642!16s%2Fg%2F11hy_qhpyt?entry=ttu", latitude: 19.359800890182438, longitude: 72.83842726619105 ,emergencyNumber: '123-456-7890' },
-  { id: 2, name: 'Supreme Pet Clinic And Care Centre', latitude: 19.36381075113499, longitude: 72.85592658579988 },
+  { id: 2, name: 'Supreme Pet Clinic And Care Centre',mapsLink:"https://maps.app.goo.gl/frbrz5NFzcVVsWfe7", latitude: 19.36381075113499, longitude: 72.85592658579988 },
   { id: 3, name: 'The Progressive Pet Clinic', latitude: 19.366478301434064, longitude: 72.81264995566688 },
   { id: 4, name: 'Four Paws Pet/Vet Clinic Vasai-Virar-Naigaon', latitude: 19.366964145397844, longitude: 72.81488155362017 },
   { id: 5, name: 'Urban Veterinary Care', latitude: 19.38560794140172, longitude: 72.82503374481 },
@@ -18,7 +18,7 @@ const hospitals = [
   { id: 9, name: 'ACEVET Poultry Vaccinator Mfg', latitude: 19.412958136458524, longitude: 72.85698148471124 },
   // mira-bhayandar
   { id: 10, name: "Dr. Vinayak's Pet Care Clinic", latitude: 19.301969670287722, longitude: 72.86607931703684 },
-  { id: 11, name: 'Dr. Margaj Pet Clinic', latitude: 19.29305875569613, longitude: 72.87174414261057 },
+  { id: 11, name: 'Dr. Margaj Pet Clinic', mapsLink:"https://maps.app.goo.gl/AEyAm9rcsuURMeQV6",latitude: 19.29305875569613, longitude: 72.87174414261057 },
   { id: 12, name: 'Dr. Dagli Pet Animal Clinic', latitude: 19.28463344479946, longitude: 72.87225912675363 },
   { id: 13, name: 'Zinnia Pet Care - Dr. Aziz D. Bate', latitude: 19.285443589687947, longitude: 72.87569235437408 },
   { id: 14, name: 'Royal Pet Clinic And Parlour.', latitude: 19.27880028329115, longitude: 72.87637899989818 },
@@ -29,10 +29,16 @@ const hospitals = [
   { id: 18, name: 'Petvets', latitude: 19.23748162333587, longitude: 72.97626160522637 },
 ];
 const emergencyNumbers = [
-  { service: 'Fire Department', number: '123' },
-  { service: 'Police', number: '456' },
-  { service: 'Ambulance', number: '789' },
-  // Add more emergency numbers as needed
+  { name: 'Anil Pachupate', number: '+91 9820521218' },
+  { name: 'Hitendra Mota', number: '+91 8369081332' },
+  { name: 'Mehul', number: '+91 9820281309' },
+  { name: 'Nanu', number: '+91 9819626311' },
+  { name: 'Pradip Kadam', number: '+91 9892481023' },
+  { name: 'Rajesh Savla', number: '+91 9930906026' },
+  { name: 'Sunil Pachupate', number: '+91 9833544414' },
+  { name: 'Tirupati Balaji', number: '+91 8082056950' },
+  { name: 'Yogesh Sagveka', number: '+91 9869186735' },
+  { name: 'Yogesh Shinde', number: '+91 9664699356' },
 ];
 
 // Determine if a hospital is nearby
@@ -134,7 +140,9 @@ export function SosModal() {
                 href={hospital.mapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-              >
+                className="ml-2"
+                > 
+                {/* <hr /> */}
                 View on Google Maps
               </a>
             </li>
@@ -142,11 +150,11 @@ export function SosModal() {
         </ul>
       </div>
       <div className="mt-8">
-  <h2 className="text-xl font-semibold text-white">Emergency Numbers</h2>
+  <h2 className="text-xl font-semibold text-white">Mumbai dog ambulances</h2>
   <ul className='text-yellow-500 ml-5 mr-5'>
     {emergencyNumbers.map((item, index) => (
       <li key={index}>
-        {item.service}: {item.number}
+        {item.name}: {item.number}
       </li>
     ))}
   </ul>

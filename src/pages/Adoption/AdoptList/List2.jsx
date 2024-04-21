@@ -20,7 +20,7 @@ export const List2 = () => {
           <img
             alt="stray2"
             className="h-70 w-full rounded object-cover lg:h-96 lg:w-1/2"
-            src="https://dogwithblog.in/wp-content/uploads/2019/09/mumbai-dog-helpline.jpg"
+            src="https://static01.nyt.com/images/2016/04/15/science/dogs-listy06/dogs-listy06-superJumbo.jpg"
           />
           <div className="mt-6 w-full lg:mt-0 lg:w-1/2 lg:pl-10">
             <h2 className="text-sm font-semibold tracking-widest text-gray-500"></h2>
@@ -46,7 +46,7 @@ export const List2 = () => {
                 className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
               >
                 Contact for more <details>
-                  If you are interested in adopting Aryan, please contact us at 1234567890. or <a href="https://www.google.com/maps/dir/19.3946612,72.7885573/S+No.+18,+Hissa+No.03+Suncity+Road,+Vasai-Gass+Rd,+Vasai+West,+Vasai-Virar,+Maharashtra+401202/@19.3964788,72.790282,16.49z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3be7ad2eff500605:0x4320b2cbe374e09f!2m2!1d72.787206!2d19.3947541?entry=ttup" target="_blank" rel="noopener noreferrer">visit us at our shelter.</a>
+                  If you are interested in adopting Aryan, please contact us at +91 9834388053. or <a href="https://www.google.com/maps/dir/19.3946612,72.7885573/S+No.+18,+Hissa+No.03+Suncity+Road,+Vasai-Gass+Rd,+Vasai+West,+Vasai-Virar,+Maharashtra+401202/@19.3964788,72.790282,16.49z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3be7ad2eff500605:0x4320b2cbe374e09f!2m2!1d72.787206!2d19.3947541?entry=ttup" target="_blank" rel="noopener noreferrer">visit us at our shelter.</a>
                 </details>
               </button>
 

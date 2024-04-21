@@ -107,7 +107,7 @@ export const Adopt = () => {
 
         <div className="relative h-[400px] w-[300px] rounded-md" onClick={() => setShowList2(true)}>
           <img
-            src="https://dogwithblog.in/wp-content/uploads/2019/09/mumbai-dog-helpline.jpg"
+            src="https://static01.nyt.com/images/2016/04/15/science/dogs-listy06/dogs-listy06-superJumbo.jpg"
             alt="AirMax Pro"
             className="z-0 h-full w-full rounded-md object-cover"
           />

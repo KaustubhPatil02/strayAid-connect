@@ -10,7 +10,7 @@ const AdminPage = () => {
   const navigate = useNavigate();
   const isAdmin = useSelector((state) => state.isAdmin);
   const dispatch = useDispatch();
-  
+
 
   useEffect(() => {
     const isAdmin = localStorage.getItem('isAdmin');
@@ -55,16 +55,27 @@ const AdminPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 w-full">
-     <div className="pr-10 pb-10 gap-[10rem]">
-     <button className="self-end px-4 py-2 mt-4 bg-red-500 text-white rounded hover:bg-red-700 mr-4 sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-5" onClick={handleLogout}>Logout</button>
-<Link to="/actions" className="inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-4 sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-5">
-  Reports
-</Link>
-<Link to="/volunteers" className="inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-5">
-  Volunteers Data
-</Link>
+  <div className="flex flex-col sm:flex-row gap-4 pr-10 pb-10">
+  <button 
+    className="flex-1 inline-block bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-5"
+    
+    onClick={handleLogout}
+  >
+    Logout
+  </button>
+  <Link 
+    to="/actions" 
+    className="flex-1 inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-5"
+  >
+    Reports
+  </Link>
+  <Link 
+    to="/volunteers" 
+    className="flex-1 inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-5"
+  >
+    Volunteers Data
+  </Link>
 </div>
-
       {/* <DonationPage /> */}
       <h2 className="text-2xl font-bold mb-4">Accident Details</h2>
       <AccidentForm />

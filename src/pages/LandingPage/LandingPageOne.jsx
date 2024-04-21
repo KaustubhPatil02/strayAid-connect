@@ -280,7 +280,7 @@ export function LandingPageOne() {
   // };
   const headings = ['Regional Chatrooms ', 'Accident Reports', 'Volunteers', 'Notification System(Sms)'];
   const descriptions = [
-    'When user is signed-in they are provided Regional Chatrooms ',
+    'When user is signed-in they are provided Regional Chatrooms, after verification ',
     'Users can file an report in case of an accident with the stray animals. The volunteers can help the strays in the region. or the users can report to the chatroom Admin.',
     'Users and volunteers can join the community and help the strays in their region. Users just have to submit their details in the volunteeringForm and they will be added as Volunteers',
     'Users and Volunteers will be able to get notification via an sms channel. Even if they are offline or, if they are unable to access the application via the Internet, '
