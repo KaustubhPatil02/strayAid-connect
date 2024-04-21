@@ -15,6 +15,8 @@ import { List8 } from "./pages/Adoption/AdoptList/List8";
 import { SosModal } from "./pages/LandingPage/SOS/SosModal";
 import AdminPage from "./pages/Donation/AdminPage";
 import { SignIn } from "./pages/othercomponents/SignIn";
+import { Actions } from "./pages/AdminActions/Actions";
+import { VolunteersData } from "./pages/AdminActions/VolunteersData";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/VolunteeringForm" element={<VolunteeringForm />} />
         <Route path="/Reports" element={<Reports />} />
         <Route path="/Admin" element={<AdminPage />} />
+        <Route path="/actions" element={<Actions />} />
+        <Route path="/volunteers" element={<VolunteersData />} />
         <Route path="/sos" element={<SosModal />} />
         <Route path="/Adopt" element={<Adopt />}>
           <Route path="List1" element={<List1 />} />

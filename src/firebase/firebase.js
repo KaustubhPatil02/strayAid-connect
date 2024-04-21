@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps } from "firebase/app";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -14,7 +14,10 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_APP_ID
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Check if a Firebase app has already been initialized
+if (!getApps().length) {
+  initializeApp(firebaseConfig);
+}
+
 export const database = firebase.database();
 export const storage = firebase.storage();

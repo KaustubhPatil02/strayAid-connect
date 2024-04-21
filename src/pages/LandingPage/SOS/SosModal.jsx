@@ -7,7 +7,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 // Mock data for hospitals
 // Updated data for hospitals
 const hospitals = [
-  { id: 1, name: 'Veterinary Polyclinic, Vasai. Asst Commissioner of Animal Husbandry Office', latitude: 19.359800890182438, longitude: 72.83842726619105 ,emergencyNumber: '123-456-7890' },
+  { id: 1, name: 'Veterinary Polyclinic, Vasai. Asst Commissioner of Animal Husbandry Office', mapsLink:"bhttps://www.google.com/maps/place/Animal+Heart+Veterinary+Clinic,+Spa+and+Pet+Store/@19.4104478,72.8240671,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7a90fdaef4e61:0xa28b3cd6827e14ad!8m2!3d19.4104428!4d72.826642!16s%2Fg%2F11hy_qhpyt?entry=ttu", latitude: 19.359800890182438, longitude: 72.83842726619105 ,emergencyNumber: '123-456-7890' },
   { id: 2, name: 'Supreme Pet Clinic And Care Centre', latitude: 19.36381075113499, longitude: 72.85592658579988 },
   { id: 3, name: 'The Progressive Pet Clinic', latitude: 19.366478301434064, longitude: 72.81264995566688 },
   { id: 4, name: 'Four Paws Pet/Vet Clinic Vasai-Virar-Naigaon', latitude: 19.366964145397844, longitude: 72.81488155362017 },
@@ -130,7 +130,8 @@ export function SosModal() {
             <li key={hospital.id}>
               {index + 1}. {hospital.name}
               <a
-                href={`https://www.google.com/maps/search/?api=1&query=${hospital.latitude},${hospital.longitude}`}
+                // href={`https://www.google.com/maps/search/?api=1&query=${hospital.latitude},${hospital.longitude}`}
+                href={hospital.mapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
