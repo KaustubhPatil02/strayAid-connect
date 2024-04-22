@@ -118,7 +118,7 @@ const MainDonation = () => {
 
       <div className="flex flex-col justify-center items-center my-4">
         <span className='text-2xl'>or</span>
-        <img src="../../../public/qr.jpg" alt="description" className="mx-2 mt-2  w-60 h-90" />
+        <img src="/qr.jpg" alt="description" className="mx-2 mt-2  w-60 h-90" />
       </div>
       <hr className="mt-10" />
 

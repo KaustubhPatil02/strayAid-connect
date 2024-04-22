@@ -35,10 +35,10 @@ const emergencyNumbers = [
   { name: 'Nanu', number: '+91 9819626311' },
   { name: 'Pradip Kadam', number: '+91 9892481023' },
   { name: 'Rajesh Savla', number: '+91 9930906026' },
-  { name: 'Sunil Pachupate', number: '+91 9833544414' },
-  { name: 'Tirupati Balaji', number: '+91 8082056950' },
-  { name: 'Yogesh Sagveka', number: '+91 9869186735' },
-  { name: 'Yogesh Shinde', number: '+91 9664699356' },
+  // { name: 'Sunil Pachupate', number: '+91 9833544414' },
+  // { name: 'Tirupati Balaji', number: '+91 8082056950' },
+  // { name: 'Yogesh Sagveka', number: '+91 9869186735' },
+  // { name: 'Yogesh Shinde', number: '+91 9664699356' },
 ];
 
 // Determine if a hospital is nearby
