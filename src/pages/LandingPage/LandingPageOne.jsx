@@ -448,7 +448,7 @@ export function LandingPageOne() {
                   </div>
 
 
-                  <a href="http://localhost:3000" target='blank'>
+                  <a href="https://strayaid-chatrooms.vercel.app/conversations" target='blank'>
                     <p className="text-sm font-medium cursor-pointer"
                     >Join the community &rarr;
                     </p>
